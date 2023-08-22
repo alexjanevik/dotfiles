@@ -119,6 +119,7 @@ wezterm.on('update-status', function(window, pane)
         '#f4b8e4',
         '#81c8be',
         '#b5bfe2',
+        '#222635',
     }
 
     local battery_printed = {}
@@ -126,7 +127,7 @@ wezterm.on('update-status', function(window, pane)
         table.insert(battery_printed, {Background={Color=colors[1]}})
         table.insert(battery_printed, {Foreground={Color=colors[6]}})
         table.insert(battery_printed, {Text=""})
-        table.insert(battery_printed, {Foreground={Color="#ffffff"}})
+        table.insert(battery_printed, {Foreground={Color=colors[8]}})
         table.insert(battery_printed, {Background={Color=colors[6]}})
         table.insert(battery_printed, {Text=battery})
     end
@@ -137,13 +138,13 @@ wezterm.on('update-status', function(window, pane)
 			{Text=cwd},
 			{Foreground={Color=colors[4]}},
 			{Text=""},
-			{Foreground={Color="#ffffff"}},
+			{Foreground={Color=colors[8]}},
 			{Background={Color=colors[4]}},
 			{Text=date},
 			{Foreground={Color=colors[1]}},
 			{Background={Color=colors[4]}},
             {Text=""},
-			{Foreground={Color="#ffffff"}},
+			{Foreground={Color=colors[8]}},
 			{Background={Color=colors[1]}},
 			{Text=hostname},
         })..
