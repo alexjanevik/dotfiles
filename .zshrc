@@ -25,4 +25,4 @@ NEWLINE=$'\n'
 setopt prompt_subst
 prompt='%F{1}%n%f %F{3}%~%f%F{4} $(git_branch_name) %F{5} ${NEWLINE}>%f '
 
-neofetch
+macchina
