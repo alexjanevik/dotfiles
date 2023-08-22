@@ -64,7 +64,7 @@ config.keys = {
             action = act.SpawnCommandInNewTab {
                 args = {
                 'vim',
-                os.getenv('HOME')..'/.vim/vimrc',
+                os.getenv('HOME')..'/.dotfiles/.vimrc',
             },
         },
     },
@@ -77,6 +77,11 @@ config.keys = {
         key = 's',
         mods = 'CMD|SHIFT',
         action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+    },
+    { -- Close pane with cmd+w
+        key = 'w',
+        mods = 'CMD',
+        action = wezterm.action.CloseCurrentPane { confirm = true },
     },
 }
 
