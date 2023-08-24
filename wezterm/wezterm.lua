@@ -14,7 +14,7 @@ end
 config.font = wezterm.font 'ProggyClean Nerd Font Mono'
 config.font_size = 18 
 
-config.color_scheme = 'Catppuccin Frappe'
+config.color_scheme = 'Catppuccin Mocha'
 
 -- Window settings
 config.initial_cols = 100
