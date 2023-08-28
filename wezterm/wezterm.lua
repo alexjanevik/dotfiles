@@ -3,16 +3,16 @@ local table = require 'table'
 local config = {}
 
 if wezterm.config_builder then
-  config = wezterm.config_builder()
+    config = wezterm.config_builder()
 end
 
 -- Font and theme
 --
---config.font = wezterm.font 'Fira Code'
---config.font_size = 12
+config.font = wezterm.font 'Fira Code'
+config.font_size = 12
 
-config.font = wezterm.font 'ProggyClean Nerd Font Mono'
-config.font_size = 18 
+--config.font = wezterm.font 'ProggyClean Nerd Font Mono'
+--config.font_size = 18 
 
 config.color_scheme = 'Catppuccin Mocha'
 
@@ -111,24 +111,21 @@ wezterm.on('update-status', function(window, pane)
         battery = string.format(' %.0f%% ', b.state_of_charge * 100)
     end 
 
+    local black_text = '#222635'
+
     local colors = {
-        '#e78284',
-        '#a6d189',
-        '#e5c890',
-        '#8caaee',
-        '#f4b8e4',
-        '#81c8be',
-        '#b5bfe2',
-        '#222635',
+        '#ad78f3',
+        '#cba6f7',
+        '#ebdef8',
     }
 
     local battery_printed = {}
     if battery ~= '' then
-        table.insert(battery_printed, {Background={Color=colors[1]}})
-        table.insert(battery_printed, {Foreground={Color=colors[6]}})
+        table.insert(battery_printed, {Background={Color=colors[2]}})
+        table.insert(battery_printed, {Foreground={Color=colors[3]}})
         table.insert(battery_printed, {Text=""})
-        table.insert(battery_printed, {Foreground={Color=colors[8]}})
-        table.insert(battery_printed, {Background={Color=colors[6]}})
+        table.insert(battery_printed, {Foreground={Color=black_text}})
+        table.insert(battery_printed, {Background={Color=colors[3]}})
         table.insert(battery_printed, {Text=battery})
     end
     
@@ -136,16 +133,16 @@ wezterm.on('update-status', function(window, pane)
 	    wezterm.format({
 			{Foreground={Color="#ffffff"}},
 			{Text=cwd},
-			{Foreground={Color=colors[4]}},
-			{Text=""},
-			{Foreground={Color=colors[8]}},
-			{Background={Color=colors[4]}},
-			{Text=date},
 			{Foreground={Color=colors[1]}},
-			{Background={Color=colors[4]}},
-            {Text=""},
-			{Foreground={Color=colors[8]}},
+			{Text=""},
+			{Foreground={Color=black_text}},
 			{Background={Color=colors[1]}},
+			{Text=date},
+			{Foreground={Color=colors[2]}},
+			{Background={Color=colors[1]}},
+            {Text=""},
+			{Foreground={Color=black_text}},
+			{Background={Color=colors[2]}},
 			{Text=hostname},
         })..
         wezterm.format(battery_printed)
