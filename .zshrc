@@ -22,7 +22,13 @@ function git_branch_name()
 NEWLINE=$'\n'
 
 # Enable substitution in the prompt.
-setopt prompt_subst
-prompt='%F{1}%n%f %F{3}%~%f%F{4} $(git_branch_name) %F{5} ${NEWLINE}>%f '
+#setopt prompt_subst
+#prompt='%F{1}%n%f %F{3}%~%f%F{4} $(git_branch_name) %F{5} ${NEWLINE}>%f '
+
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config ~/.dotfiles/zsh/oh-my-posh/amro-edit.omp.json)"
+fi
+
+source ~/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 macchina
