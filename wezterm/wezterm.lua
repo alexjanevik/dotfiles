@@ -14,7 +14,7 @@ config.font_size = 12
 --config.font = wezterm.font 'ProggyClean Nerd Font Mono'
 --config.font_size = 18 
 
-config.color_scheme = 'Catppuccin Mocha'
+config.color_scheme = 'Catppuccin Macchiato'
 
 -- Window settings
 config.initial_cols = 100
@@ -113,19 +113,15 @@ wezterm.on('update-status', function(window, pane)
 
     local black_text = '#222635'
 
-    local colors = {
-        '#ad78f3',
-        '#cba6f7',
-        '#ebdef8',
-    }
+    local accent = '#cba6f7';
 
     local battery_printed = {}
     if battery ~= '' then
-        table.insert(battery_printed, {Background={Color=colors[2]}})
-        table.insert(battery_printed, {Foreground={Color=colors[3]}})
-        table.insert(battery_printed, {Text=""})
+        table.insert(battery_printed, {Background={Color=accent}})
         table.insert(battery_printed, {Foreground={Color=black_text}})
-        table.insert(battery_printed, {Background={Color=colors[3]}})
+        table.insert(battery_printed, {Text=""})
+        table.insert(battery_printed, {Foreground={Color=black_text}})
+        table.insert(battery_printed, {Background={Color=accent}})
         table.insert(battery_printed, {Text=battery})
     end
     
@@ -133,16 +129,16 @@ wezterm.on('update-status', function(window, pane)
 	    wezterm.format({
 			{Foreground={Color="#ffffff"}},
 			{Text=cwd},
-			{Foreground={Color=colors[1]}},
+			{Foreground={Color=accent}},
 			{Text=""},
 			{Foreground={Color=black_text}},
-			{Background={Color=colors[1]}},
+			{Background={Color=accent}},
 			{Text=date},
-			{Foreground={Color=colors[2]}},
-			{Background={Color=colors[1]}},
-            {Text=""},
 			{Foreground={Color=black_text}},
-			{Background={Color=colors[2]}},
+			{Background={Color=accent}},
+            {Text=""},
+			{Foreground={Color=black_text}},
+			{Background={Color=accent}},
 			{Text=hostname},
         })..
         wezterm.format(battery_printed)
