@@ -32,3 +32,4 @@ fi
 source ~/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 macchina
+export PATH=$PATH:/Users/alexjanevik/.spicetify
