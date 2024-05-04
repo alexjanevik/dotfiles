@@ -33,6 +33,8 @@ config.window_decorations = 'RESIZE'
 config.window_background_opacity = 0.90
 config.macos_window_background_blur = 50
 
+config.native_macos_fullscreen_mode = true
+
 -- Hotkeys
 local act = wezterm.action
 config.keys = {
