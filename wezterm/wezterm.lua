@@ -17,9 +17,9 @@ config.initial_cols = 90
 config.initial_rows = 30
 
 config.window_padding = {
-    left = '3cell',
-    right = '3cell',
-    top = '1.5cell',
+    left = '0cell',
+    right = '0cell',
+    top = '0cell',
     bottom = '0cell',
 }
 
@@ -30,10 +30,10 @@ config.scrollback_lines = 1000
 config.default_cursor_style = 'BlinkingBar'
 config.window_decorations = 'RESIZE'
 
-config.window_background_opacity = 0.90
-config.macos_window_background_blur = 50
+--config.window_background_opacity = 0.9
+--config.macos_window_background_blur = 50
 
-config.native_macos_fullscreen_mode = true
+--config.native_macos_fullscreen_mode = false
 
 -- Hotkeys
 local act = wezterm.action
@@ -74,7 +74,7 @@ config.keys = {
         action = act.SpawnTab 'CurrentPaneDomain',
     },
     { -- Close pane with alt+w
-        key = 'w',
+        key = 'x',
         mods = 'ALT',
         action = act.CloseCurrentPane { confirm = true },
     },
@@ -119,7 +119,7 @@ config.keys = {
         mods = 'ALT',
         action = act.ActivateTabRelative(1) },
 }
-
+--[[
 wezterm.on("update-right-status", function(window, pane)
     local cwd_uri = pane:get_current_working_dir()
     cwd = " "..cwd_uri.file_path.." "
@@ -172,6 +172,6 @@ wezterm.on(
     end
     return title
   end
-)
+)]]--
 
 return config
