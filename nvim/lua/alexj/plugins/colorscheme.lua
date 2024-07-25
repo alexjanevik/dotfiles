@@ -10,12 +10,3 @@ return {
 		vim.cmd.colorscheme("catppuccin-mocha")
 	end,
 }
-
---[[return {
-	"akinsho/horizon.nvim",
-	version = "*",
-	config = function()
-		vim.cmd.colorscheme("horizon")
-	end,
-}]]
---

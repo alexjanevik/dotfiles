@@ -9,6 +9,8 @@ return {
 		lualine.setup({
 			options = {
 				theme = "catppuccin-mocha",
+				component_separators = "",
+				section_separators = { left = "", right = "" },
 			},
 			tabline = {},
 			sections = {
@@ -16,7 +18,7 @@ return {
 					{
 						lazy_status.updates,
 						cond = lazy_status.has_updates,
-						color = { fg = "#ff9e64" },
+						--color = { fg = "#ff9e64" },
 					},
 					{ "encoding" },
 					{ "fileformat" },
