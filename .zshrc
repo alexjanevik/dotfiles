@@ -36,3 +36,6 @@ eval "$(zoxide init zsh)"
 alias cd="z"
 
 macchina
+
+# Created by `pipx` on 2024-05-14 19:05:07
+export PATH="$PATH:/Users/alexjanevik/.local/bin"

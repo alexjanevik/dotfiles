@@ -6,8 +6,10 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- Font and theme
+---- Font and theme
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
+--config.font = wezterm.font("Fira Code")
+--config.font = wezterm.font("MonoLisa")
 config.font_size = 14
 
 config.color_scheme = "Catppuccin Mocha"
@@ -38,26 +40,6 @@ config.native_macos_fullscreen_mode = true
 -- Hotkeys
 local act = wezterm.action
 config.keys = {
-	{ -- Open wezterm config shortcut alt+,
-		key = ",",
-		mods = "ALT",
-		action = act.SpawnCommandInNewTab({
-			args = {
-				"vim",
-				os.getenv("WEZTERM_CONFIG_FILE"),
-			},
-		}),
-	},
-	{ -- Open vimrc shortcut alt+,
-		key = ".",
-		mods = "ALT",
-		action = act.SpawnCommandInNewTab({
-			args = {
-				"vim",
-				os.getenv("HOME") .. "/.dotfiles/.vimrc",
-			},
-		}),
-	},
 	{ -- Split window horizontally alt+\
 		key = "\\",
 		mods = "ALT",

@@ -8,7 +8,7 @@ long_uptime = true
 long_shell = false
 
 # Lengthen kernel output
-long_kernel = false
+long_kernel = true
 
 # Toggle between displaying the current shell or your user's default one.
 current_shell = false
@@ -54,5 +54,5 @@ theme = "mytheme"
 #   - DiskSpace
 # Example:
 #   show = ["Battery", "Memory", ...]
-show = ['Host', 'OperatingSystem', 'Kernel', 'Uptime', 'Packages', 'Shell', 'Resolution', 'DesktopEnvironment', 'WindowManager', 'Terminal', 'Processor', 'Memory', 'Battery']
+show = ['Host', 'Machine', 'OperatingSystem', 'Kernel', 'Shell', 'Uptime', 'Packages', 'Processor'] 
 
