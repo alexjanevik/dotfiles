@@ -15,7 +15,7 @@ config.font_size = 14
 config.color_scheme = "Catppuccin Mocha"
 
 -- Window settings
-config.initial_cols = 96
+config.initial_cols = 108
 config.initial_rows = 32
 
 config.window_padding = {
