@@ -8,21 +8,42 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				theme = "catppuccin-mocha",
+				theme = "catppuccin",
 				component_separators = "",
 				section_separators = { left = "", right = "" },
+				disabled_filetypes = { "NvimTree" },
 			},
 			tabline = {},
 			sections = {
-				lualine_x = {
+				lualine_a = {
 					{
+						"mode",
+						icons_enabled = true,
+						icon = "",
+					},
+				},
+				lualine_c = {
+					{
+						"filename",
+						path = 1,
+					},
+					{
+						"filetype",
+						icon_only = true,
+						colored = false,
+					},
+				},
+
+				lualine_x = {
+					--[[
+          {
 						lazy_status.updates,
 						cond = lazy_status.has_updates,
-						--color = { fg = "#ff9e64" },
 					},
 					{ "encoding" },
 					{ "fileformat" },
-					{ "filetype" },
+					{ "filetype", icon_only = true },
+          --]]
 				},
 			},
 		})
