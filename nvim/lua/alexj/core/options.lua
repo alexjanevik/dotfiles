@@ -2,6 +2,8 @@ vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt
 
+opt.colorcolumn = "80"
+
 opt.relativenumber = true
 opt.number = true
 opt.mousemoveevent = true

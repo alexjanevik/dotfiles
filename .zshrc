@@ -1,3 +1,5 @@
+macchina
+
 #if [ "$TMUX" = "" ]; then tmux; fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -28,14 +30,17 @@ bindkey "^[[B" history-search-forward
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# ---- Eza (better ls) -----
+# ---- Eza (better ls) ----
 alias ls="eza --icons=always --grid"
 
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 alias cd="z"
 
-macchina
+# ---- Pyenv ----
+eval "$(pyenv init -)"
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
-# Created by `pipx` on 2024-05-14 19:05:07
-export PATH="$PATH:/Users/alexjanevik/.local/bin"
+export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
+export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
+export PATH=$PATH:/usr/local/opt/tcl-tk/bin
