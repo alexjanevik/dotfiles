@@ -108,8 +108,9 @@ wezterm.on("update-right-status", function(window, pane)
 	cwd = " " .. cwd_uri.file_path .. " "
 	local date = wezterm.strftime(" %d/%m/%Y %H:%M ")
 
-	local folder = utf8.char(0xf07c)
-	local calendar = utf8.char(0xf073)
+	local folder = ""
+	local calendar = ""
+	local battery = "󱊢"
 	window:set_right_status(wezterm.format({
 		{ Foreground = { Color = "#11111c" } },
 		{ Background = { Color = "#a6e3a1" } },
@@ -124,6 +125,10 @@ wezterm.on("update-right-status", function(window, pane)
 	}) .. wezterm.format({
 		{ Foreground = { Color = "#ffffff" } },
 		{ Text = date },
+	}) .. wezterm.format({
+		{ Foreground = { Color = "#11111c" } },
+		{ Background = { Color = "#cba6f7" } },
+		{ Text = " " .. battery .. " " },
 	}))
 end)
 
