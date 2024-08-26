@@ -108,14 +108,25 @@ wezterm.on("update-right-status", function(window, pane)
 	cwd = " " .. cwd_uri.file_path .. " "
 	local date = wezterm.strftime(" %d/%m/%Y %H:%M ")
 
+	local battery1 = "󱊡"
+	local battery2 = "󱊢"
+	local battery3 = "󱊣"
+
 	local bat = ""
 	for _, b in ipairs(wezterm.battery_info()) do
 		bat = string.format("%.0f%%", b.state_of_charge * 100)
+		if b.state_of_charge * 100 > 80 then
+			battery_ico = battery3
+		elseif b.state_of_charge * 100 > 30 then
+			battery_ico = battery2
+		else
+			battery_ico = battery1
+		end
 	end
 
 	local folder = ""
 	local calendar = ""
-	local battery_ico = "󱊢"
+
 	window:set_right_status(wezterm.format({
 		{ Foreground = { Color = "#11111c" } },
 		{ Background = { Color = "#a6e3a1" } },
