@@ -44,3 +44,5 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
 export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
 export PATH=$PATH:/usr/local/opt/tcl-tk/bin
+
+eval $(thefuck --alias)

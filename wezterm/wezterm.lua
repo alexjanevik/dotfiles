@@ -32,6 +32,8 @@ config.scrollback_lines = 1000
 config.default_cursor_style = "BlinkingBar"
 config.window_decorations = "RESIZE"
 
+config.scrollback_lines = 50000
+
 --config.window_background_opacity = 0.9
 --config.macos_window_background_blur = 50
 
