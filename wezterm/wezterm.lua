@@ -1,5 +1,4 @@
 local wezterm = require("wezterm")
-local table = require("table")
 local config = {}
 
 if wezterm.config_builder then
@@ -8,15 +7,13 @@ end
 
 ---- Font and theme
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
---config.font = wezterm.font("Fira Code")
---config.font = wezterm.font("MonoLisa")
-config.font_size = 14
+config.font_size = 12
 
 config.color_scheme = "Catppuccin Mocha"
 
 -- Window settings
-config.initial_cols = 108
-config.initial_rows = 32
+config.initial_cols = 100
+config.initial_rows = 30
 
 config.window_padding = {
 	left = "0cell",
@@ -25,12 +22,13 @@ config.window_padding = {
 	bottom = "0cell",
 }
 
-config.enable_scroll_bar = false
+config.enable_scroll_bar = true
 config.use_fancy_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
 config.scrollback_lines = 1000
 config.default_cursor_style = "BlinkingBar"
 config.window_decorations = "RESIZE"
+config.front_end = "WebGpu"
 
 config.scrollback_lines = 50000
 
@@ -107,14 +105,16 @@ config.keys = {
 
 wezterm.on("update-right-status", function(window, pane)
 	local cwd_uri = pane:get_current_working_dir()
-	cwd = " " .. cwd_uri.file_path .. " "
-	local date = wezterm.strftime(" %d/%m/%Y %H:%M ")
+	local cwd = " " .. cwd_uri.file_path .. " "
+	cwd = cwd:gsub("/Users/alexjanevik", "~")
+	local date = wezterm.strftime(" %d/%m/%Y %I:%M %p ")
 
 	local battery1 = "󱊡"
 	local battery2 = "󱊢"
 	local battery3 = "󱊣"
 
 	local bat = ""
+	local battery_ico = ""
 	for _, b in ipairs(wezterm.battery_info()) do
 		bat = string.format("%.0f%%", b.state_of_charge * 100)
 		if b.state_of_charge * 100 > 80 then
