@@ -27,13 +27,15 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
-				"tsserver",
 				"html",
+				"omnisharp",
+				"ast_grep",
 				"cssls",
-				--"tailwindcss",
+				"tailwindcss",
 				"svelte",
 				"lua_ls",
 				"graphql",
+				"eslint",
 				"emmet_ls",
 				"prismals",
 				"pyright",
@@ -42,6 +44,8 @@ return {
 				"rust_analyzer",
 				"sqlls",
 				"jdtls",
+				"jsonls",
+				"glsl_analyzer",
 			},
 		})
 
