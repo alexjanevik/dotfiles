@@ -43,6 +43,8 @@ export PATH=$PATH:/usr/local/opt/tcl-tk/bin
 
 eval $(thefuck --alias)
 
+alias lg="lazygit"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
