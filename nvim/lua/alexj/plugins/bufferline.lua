@@ -5,13 +5,15 @@ return {
 	opts = {
 		options = {
 			mode = "buffers",
-			separator_style = "thin",
+			separator_style = "slant",
 			modified_icon = "●",
 			buffer_close_icon = "",
 			show_buffer_close_icons = true,
 			name_formatter = function(buf)
 				return vim.fn.fnamemodify(buf.name, ":p:.")
 			end,
+
+			enforce_regular_tabs = false,
 
 			hover = {
 				enabled = true,

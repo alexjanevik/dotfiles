@@ -24,11 +24,15 @@ config.window_padding = {
 
 config.enable_scroll_bar = true
 config.use_fancy_tab_bar = false
-config.window_close_confirmation = "NeverPrompt"
 config.scrollback_lines = 1000
 config.default_cursor_style = "BlinkingBar"
-config.window_decorations = "RESIZE"
+--config.window_decorations = "RESIZE"
 config.front_end = "WebGpu"
+--config.window_close_confirmation = "NeverPrompt"
+config.skip_close_confirmation_for_processes_named = {
+	"zsh",
+	"tmux",
+}
 
 config.scrollback_lines = 50000
 
@@ -40,16 +44,27 @@ config.native_macos_fullscreen_mode = true
 -- Hotkeys
 local act = wezterm.action
 config.keys = {
-	{ -- Split window horizontally alt+\
+	--[[ { -- Split window horizontally alt+\
 		key = "\\",
 		mods = "ALT",
 		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
+	},]]
+
 	{ -- Split window vertically alt+-
 		key = "-",
 		mods = "ALT",
 		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
+
+	{ -- Split window horizontally alt+\
+		key = "\\",
+		mods = "ALT",
+		action = act.SplitPane({
+			direction = "Right",
+			size = { Percent = 30 },
+		}),
+	},
+
 	{ -- New tab with alt+t
 		key = "t",
 		mods = "ALT",
@@ -58,12 +73,7 @@ config.keys = {
 	{ -- Close pane with alt+w
 		key = "x",
 		mods = "ALT",
-		action = act.CloseCurrentPane({ confirm = false }),
-	},
-	{ -- New window
-		key = "n",
-		mods = "ALT",
-		action = act.SpawnWindow,
+		action = act.CloseCurrentPane({ confirm = true }),
 	},
 	{ -- Fullscreen
 		key = "f",
@@ -100,6 +110,16 @@ config.keys = {
 		key = "RightArrow",
 		mods = "ALT",
 		action = act.ActivateTabRelative(1),
+	},
+	{
+		key = "m",
+		mods = "ALT",
+		action = act.RotatePanes("Clockwise"),
+	},
+	{
+		key = "n",
+		mods = "ALT",
+		action = act.RotatePanes("CounterClockwise"),
 	},
 }
 
@@ -172,6 +192,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 			{ Text = title },
 		}
 	end
+
 	return title
 end)
 
