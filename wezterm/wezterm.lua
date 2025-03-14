@@ -9,7 +9,8 @@ end
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
 config.font_size = 12
 
-config.color_scheme = "Catppuccin Mocha"
+-- config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "Tokyo Night"
 
 -- Window settings
 config.initial_cols = 100

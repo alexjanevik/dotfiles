@@ -5,13 +5,17 @@ return {
 	opts = {
 		options = {
 			mode = "buffers",
-			separator_style = "slant",
+			separator_style = { "", "" },
 			modified_icon = "●",
 			buffer_close_icon = "",
 			show_buffer_close_icons = true,
+			color_icons = true,
+
 			name_formatter = function(buf)
 				return vim.fn.fnamemodify(buf.name, ":p:.")
 			end,
+
+			style_preset = 4,
 
 			enforce_regular_tabs = false,
 
@@ -24,7 +28,7 @@ return {
 			offsets = {
 				{
 					filetype = "NvimTree",
-					text = "File Explorer",
+					text = "NvimTree",
 					text_align = "center",
 					highlight = "Directory",
 				},
