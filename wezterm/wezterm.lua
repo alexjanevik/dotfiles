@@ -150,23 +150,27 @@ wezterm.on("update-right-status", function(window, pane)
 	local folder = ""
 	local calendar = ""
 
+	local folder_color = "#f7768e"
+	local calendar_color = "#ff9e64"
+	local battery_color = "#9ece6a"
+
 	window:set_right_status(wezterm.format({
 		{ Foreground = { Color = "#11111c" } },
-		{ Background = { Color = "#a6e3a1" } },
+		{ Background = { Color = folder_color } },
 		{ Text = " " .. folder .. " " },
 	}) .. wezterm.format({
 		{ Foreground = { Color = "#ffffff" } },
 		{ Text = cwd },
 	}) .. wezterm.format({
 		{ Foreground = { Color = "#11111c" } },
-		{ Background = { Color = "#89b4fa" } },
+		{ Background = { Color = calendar_color } },
 		{ Text = " " .. calendar .. " " },
 	}) .. wezterm.format({
 		{ Foreground = { Color = "#ffffff" } },
 		{ Text = date },
 	}) .. wezterm.format({
 		{ Foreground = { Color = "#11111c" } },
-		{ Background = { Color = "#cba6f7" } },
+		{ Background = { Color = battery_color } },
 		{ Text = " " .. battery_ico .. " " },
 	}) .. wezterm.format({
 		{ Foreground = { Color = "#ffffff" } },
@@ -187,9 +191,10 @@ end
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
 	local title = tab_title(tab)
+	local tab_color = "#394b70"
 	if tab.is_active then
 		return {
-			{ Background = { Color = "#fab387" } },
+			{ Background = { Color = tab_color } },
 			{ Text = title },
 		}
 	end
