@@ -2,7 +2,7 @@ vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt
 
-opt.colorcolumn = "80"
+-- opt.colorcolumn = "80"
 opt.wrap = true
 
 opt.relativenumber = true
@@ -22,9 +22,15 @@ opt.smartcase = true
 opt.cursorline = true
 
 -- termguicolors
-opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
+
+vim.cmd([[
+  autocmd VimEnter * highlight Normal ctermbg=NONE guibg=NONE
+  autocmd VimEnter * highlight NonText ctermbg=NONE
+]])
+
+opt.termguicolors = true
 
 -- backspace
 opt.backspace = "indent,eol,start"

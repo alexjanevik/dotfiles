@@ -13,8 +13,8 @@ config.font_size = 12
 config.color_scheme = "Tokyo Night"
 
 -- Window settings
-config.initial_cols = 100
-config.initial_rows = 30
+config.initial_cols = 106
+config.initial_rows = 32
 
 config.window_padding = {
 	left = "0cell",
@@ -27,91 +27,78 @@ config.enable_scroll_bar = true
 config.use_fancy_tab_bar = false
 config.scrollback_lines = 1000
 config.default_cursor_style = "BlinkingBar"
---config.window_decorations = "RESIZE"
+-- config.window_decorations = "RESIZE"
 config.front_end = "WebGpu"
---config.window_close_confirmation = "NeverPrompt"
 config.skip_close_confirmation_for_processes_named = {
 	"zsh",
 	"tmux",
 }
 
 config.scrollback_lines = 50000
+config.window_background_opacity = 0.92
+config.macos_window_background_blur = 25
+config.native_macos_fullscreen_mode = false
 
---config.window_background_opacity = 0.9
---config.macos_window_background_blur = 50
+-- Performance Settings
+config.max_fps = 144
+config.animation_fps = 60
+config.cursor_blink_rate = 300
 
-config.native_macos_fullscreen_mode = true
+config.enable_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
+config.show_tab_index_in_tab_bar = true
+config.use_fancy_tab_bar = false
 
 -- Hotkeys
 local act = wezterm.action
 config.keys = {
-	--[[ { -- Split window horizontally alt+\
-		key = "\\",
-		mods = "ALT",
-		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},]]
-
 	{ -- Split window vertically alt+-
 		key = "-",
-		mods = "ALT",
+		mods = "CMD",
 		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 
 	{ -- Split window horizontally alt+\
 		key = "\\",
-		mods = "ALT",
+		mods = "CMD",
 		action = act.SplitPane({
 			direction = "Right",
 			size = { Percent = 30 },
 		}),
 	},
 
-	{ -- New tab with alt+t
-		key = "t",
-		mods = "ALT",
-		action = act.SpawnTab("CurrentPaneDomain"),
-	},
-	{ -- Close pane with alt+w
+	{ -- Close pane with alt+x
 		key = "x",
-		mods = "ALT",
+		mods = "CMD",
 		action = act.CloseCurrentPane({ confirm = true }),
 	},
 	{ -- Fullscreen
 		key = "f",
-		mods = "ALT",
+		mods = "CMD",
 		action = act.ToggleFullScreen,
 	},
 	-- Move between tabs and panes
 	{
 		key = "h",
-		mods = "ALT",
+		mods = "CMD",
 		action = act.ActivatePaneDirection("Left"),
 	},
 	{
 		key = "l",
-		mods = "ALT",
+		mods = "CMD",
 		action = act.ActivatePaneDirection("Right"),
 	},
 	{
 		key = "k",
-		mods = "ALT",
+		mods = "CMD",
 		action = act.ActivatePaneDirection("Up"),
 	},
 	{
 		key = "j",
-		mods = "ALT",
+		mods = "CMD",
 		action = act.ActivatePaneDirection("Down"),
 	},
-	{
-		key = "LeftArrow",
-		mods = "ALT",
-		action = act.ActivateTabRelative(-1),
-	},
-	{
-		key = "RightArrow",
-		mods = "ALT",
-		action = act.ActivateTabRelative(1),
-	},
+
 	{
 		key = "m",
 		mods = "ALT",
@@ -123,83 +110,5 @@ config.keys = {
 		action = act.RotatePanes("CounterClockwise"),
 	},
 }
-
-wezterm.on("update-right-status", function(window, pane)
-	local cwd_uri = pane:get_current_working_dir()
-	local cwd = " " .. cwd_uri.file_path .. " "
-	cwd = cwd:gsub("/Users/alexjanevik", "~")
-	local date = wezterm.strftime(" %d/%m/%Y %I:%M %p ")
-
-	local battery1 = "󱊡"
-	local battery2 = "󱊢"
-	local battery3 = "󱊣"
-
-	local bat = ""
-	local battery_ico = ""
-	for _, b in ipairs(wezterm.battery_info()) do
-		bat = string.format("%.0f%%", b.state_of_charge * 100)
-		if b.state_of_charge * 100 > 80 then
-			battery_ico = battery3
-		elseif b.state_of_charge * 100 > 30 then
-			battery_ico = battery2
-		else
-			battery_ico = battery1
-		end
-	end
-
-	local folder = ""
-	local calendar = ""
-
-	local folder_color = "#f7768e"
-	local calendar_color = "#ff9e64"
-	local battery_color = "#9ece6a"
-
-	window:set_right_status(wezterm.format({
-		{ Foreground = { Color = "#11111c" } },
-		{ Background = { Color = folder_color } },
-		{ Text = " " .. folder .. " " },
-	}) .. wezterm.format({
-		{ Foreground = { Color = "#ffffff" } },
-		{ Text = cwd },
-	}) .. wezterm.format({
-		{ Foreground = { Color = "#11111c" } },
-		{ Background = { Color = calendar_color } },
-		{ Text = " " .. calendar .. " " },
-	}) .. wezterm.format({
-		{ Foreground = { Color = "#ffffff" } },
-		{ Text = date },
-	}) .. wezterm.format({
-		{ Foreground = { Color = "#11111c" } },
-		{ Background = { Color = battery_color } },
-		{ Text = " " .. battery_ico .. " " },
-	}) .. wezterm.format({
-		{ Foreground = { Color = "#ffffff" } },
-		{ Text = " " .. bat .. " " },
-	}))
-end)
-
-function tab_title(tab_info)
-	local title = tab_info.tab_title
-	-- if the tab title is explicitly set, take that
-	if title and #title > 0 then
-		return " " .. title .. " "
-	end
-	-- Otherwise, use the title from the active pane
-	-- in that tab
-	return " " .. tab_info.active_pane.title .. " "
-end
-
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-	local title = tab_title(tab)
-	local tab_color = "#394b70"
-	if tab.is_active then
-		return {
-			{ Background = { Color = tab_color } },
-			{ Text = title },
-		}
-	end
-
-	return title
-end)
 
 return config
