@@ -7,14 +7,14 @@ end
 
 ---- Font and theme
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
-config.font_size = 12
+config.font_size = 13
 
 -- config.color_scheme = "Catppuccin Mocha"
 config.color_scheme = "Tokyo Night"
 
 -- Window settings
-config.initial_cols = 106
-config.initial_rows = 32
+config.initial_cols = 100
+config.initial_rows = 36
 
 config.window_padding = {
 	left = "0cell",
@@ -24,10 +24,9 @@ config.window_padding = {
 }
 
 config.enable_scroll_bar = true
-config.use_fancy_tab_bar = false
 config.scrollback_lines = 1000
 config.default_cursor_style = "BlinkingBar"
--- config.window_decorations = "RESIZE"
+config.window_decorations = "RESIZE"
 config.front_end = "WebGpu"
 config.skip_close_confirmation_for_processes_named = {
 	"zsh",
@@ -35,7 +34,8 @@ config.skip_close_confirmation_for_processes_named = {
 }
 
 config.scrollback_lines = 50000
---config.window_background_opacity = 0.92
+config.window_background_opacity = 0.85
+config.text_background_opacity = 0.85
 config.macos_window_background_blur = 25
 config.native_macos_fullscreen_mode = false
 
@@ -52,22 +52,21 @@ config.use_fancy_tab_bar = false
 -- Hotkeys
 local act = wezterm.action
 config.keys = {
-	{ -- Split window vertically alt+-
+	{ -- Split window vertically
 		key = "-",
 		mods = "CMD",
 		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 
-	{ -- Split window horizontally alt+\
+	{ -- Split window horizontally
 		key = "\\",
 		mods = "CMD",
 		action = act.SplitPane({
 			direction = "Right",
-			size = { Percent = 30 },
 		}),
 	},
 
-	{ -- Close pane with alt+x
+	{ -- Close pane
 		key = "x",
 		mods = "CMD",
 		action = act.CloseCurrentPane({ confirm = true }),
@@ -77,7 +76,7 @@ config.keys = {
 		mods = "CMD",
 		action = act.ToggleFullScreen,
 	},
-	-- Move between tabs and panes
+	-- Move between panes
 	{
 		key = "h",
 		mods = "CMD",
@@ -97,6 +96,17 @@ config.keys = {
 		key = "j",
 		mods = "CMD",
 		action = act.ActivatePaneDirection("Down"),
+	},
+	-- Resize panes
+	{
+		key = "h",
+		mods = "CMD|SHIFT",
+		action = act.AdjustPaneSize({ "Left", 5 }),
+	},
+	{
+		key = "l",
+		mods = "CMD|SHIFT",
+		action = act.AdjustPaneSize({ "Right", 5 }),
 	},
 
 	{

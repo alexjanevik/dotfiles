@@ -24,15 +24,6 @@ return {
 				delay = 0,
 				reveal = { "close" },
 			},
-
-			offsets = {
-				{
-					filetype = "NvimTree",
-					text = "NvimTree",
-					text_align = "center",
-					highlight = "Directory",
-				},
-			},
 		},
 	},
 }
