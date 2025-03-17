@@ -20,6 +20,12 @@ return {
 			autotag = {
 				enable = true,
 			},
+
+			sync_install = false,
+			auto_install = false,
+			ignore_install = {},
+			modules = {},
+
 			-- ensure these language parsers are installed
 			ensure_installed = {
 				"json",
@@ -45,6 +51,7 @@ return {
 				"java",
 				"rust",
 				"python",
+				"haskell",
 			},
 			incremental_selection = {
 				enable = true,

@@ -6,6 +6,6 @@ return {
 			themes = { "gruvbox", "catppuccin", "tokyonight" },
 			livePreview = true,
 		})
-		vim.keymap.set("n", "<leader>ft", "<cmd>Themery<cr>", { desc = "Change color scheme" })
+		vim.keymap.set("n", "<leader>cs", "<cmd>Themery<cr>", { desc = "Change color scheme" })
 	end,
 }

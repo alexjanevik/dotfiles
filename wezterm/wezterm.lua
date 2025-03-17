@@ -7,7 +7,7 @@ end
 
 ---- Font and theme
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
-config.font_size = 13
+config.font_size = 12
 
 -- config.color_scheme = "Catppuccin Mocha"
 config.color_scheme = "Tokyo Night"
@@ -34,9 +34,9 @@ config.skip_close_confirmation_for_processes_named = {
 }
 
 config.scrollback_lines = 50000
-config.window_background_opacity = 0.85
-config.text_background_opacity = 0.85
-config.macos_window_background_blur = 25
+config.window_background_opacity = 0.925
+config.text_background_opacity = 0.925
+config.macos_window_background_blur = 20
 config.native_macos_fullscreen_mode = false
 
 -- Performance Settings
@@ -65,12 +65,18 @@ config.keys = {
 			direction = "Right",
 		}),
 	},
-
-	{ -- Close pane
-		key = "x",
+	-- Close window / pane
+	{
+		key = "w",
 		mods = "CMD",
 		action = act.CloseCurrentPane({ confirm = true }),
 	},
+	{
+		key = "W",
+		mods = "CMD|SHIFT",
+		action = act.CloseCurrentTab({ confirm = true }),
+	},
+
 	{ -- Fullscreen
 		key = "f",
 		mods = "CMD",
@@ -107,6 +113,16 @@ config.keys = {
 		key = "l",
 		mods = "CMD|SHIFT",
 		action = act.AdjustPaneSize({ "Right", 5 }),
+	},
+	{
+		key = "k",
+		mods = "CMD|SHIFT",
+		action = act.AdjustPaneSize({ "Up", 5 }),
+	},
+	{
+		key = "j",
+		mods = "CMD|SHIFT",
+		action = act.AdjustPaneSize({ "Down", 5 }),
 	},
 
 	{
