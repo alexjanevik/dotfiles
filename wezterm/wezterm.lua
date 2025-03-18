@@ -6,7 +6,7 @@ if wezterm.config_builder then
 end
 
 ---- Font and theme
-config.font = wezterm.font("MesloLGS Nerd Font Mono")
+config.font = wezterm.font("MesloLGL Nerd Font Mono")
 config.font_size = 12
 
 -- config.color_scheme = "Catppuccin Mocha"
@@ -34,8 +34,8 @@ config.skip_close_confirmation_for_processes_named = {
 }
 
 config.scrollback_lines = 50000
-config.window_background_opacity = 0.925
-config.text_background_opacity = 0.925
+config.window_background_opacity = 0.965
+config.text_background_opacity = 0.965
 config.macos_window_background_blur = 20
 config.native_macos_fullscreen_mode = false
 
