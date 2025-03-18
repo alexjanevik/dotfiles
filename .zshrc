@@ -43,6 +43,6 @@ eval $(thefuck --alias)
 
 alias lg="lazygit"
 
-. ./zsh/venv_wrapper # python virtualenv wrapper
+. ~/.dotfiles/zsh/venv_wrapper # python virtualenv wrapper
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
