@@ -1,5 +1,3 @@
-# include following in .bashrc / .bash_profile / .zshrc
-# usage
 # $ mkvenv myvirtualenv # creates venv under ~/.virtualenvs/
 # $ venv myvirtualenv   # activates venv
 # $ deactivate          # deactivates venv

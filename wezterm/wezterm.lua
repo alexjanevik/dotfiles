@@ -6,7 +6,7 @@ if wezterm.config_builder then
 end
 
 ---- Font and theme
-config.font = wezterm.font("MesloLGL Nerd Font Mono")
+config.font = wezterm.font("Fira Code")
 config.font_size = 12
 
 -- config.color_scheme = "Catppuccin Mocha"
@@ -23,26 +23,30 @@ config.window_padding = {
 	bottom = "0cell",
 }
 
-config.enable_scroll_bar = true
+config.enable_scroll_bar = false
 config.scrollback_lines = 1000
 config.default_cursor_style = "BlinkingBar"
 config.window_decorations = "RESIZE"
 config.front_end = "WebGpu"
+--config.enable_wayland = false
+
+config.term = "xterm-kitty"
+config.enable_kitty_graphics = true
 config.skip_close_confirmation_for_processes_named = {
 	"zsh",
 	"tmux",
 }
 
-config.scrollback_lines = 50000
+config.scrollback_lines = 5000
 config.window_background_opacity = 0.965
 config.text_background_opacity = 0.965
 config.macos_window_background_blur = 20
-config.native_macos_fullscreen_mode = false
+config.native_macos_fullscreen_mode = true
 
 -- Performance Settings
 config.max_fps = 144
 config.animation_fps = 60
-config.cursor_blink_rate = 300
+config.cursor_blink_rate = 350
 
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
@@ -69,12 +73,12 @@ config.keys = {
 	{
 		key = "w",
 		mods = "CMD",
-		action = act.CloseCurrentPane({ confirm = true }),
+		action = act.CloseCurrentTab({ confirm = false }),
 	},
 	{
 		key = "W",
 		mods = "CMD|SHIFT",
-		action = act.CloseCurrentTab({ confirm = true }),
+		action = act.CloseCurrentPane({ confirm = false }),
 	},
 
 	{ -- Fullscreen

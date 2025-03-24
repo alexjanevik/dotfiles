@@ -52,6 +52,7 @@ return {
 				"rust",
 				"python",
 				"haskell",
+				"markdown",
 			},
 			incremental_selection = {
 				enable = true,
