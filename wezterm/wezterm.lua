@@ -6,7 +6,7 @@ if wezterm.config_builder then
 end
 
 ---- Font and theme
-config.font = wezterm.font("Fira Code")
+config.font = wezterm.font("JetBrains Mono")
 config.font_size = 12
 
 -- config.color_scheme = "Catppuccin Mocha"
@@ -26,9 +26,9 @@ config.window_padding = {
 config.enable_scroll_bar = false
 config.scrollback_lines = 1000
 config.default_cursor_style = "BlinkingBar"
-config.window_decorations = "RESIZE"
+config.window_decorations =
+	"MACOS_USE_BACKGROUND_COLOR_AS_TITLEBAR_COLOR | TITLE | INTEGRATED_BUTTONS | RESIZE | MACOS_FORCE_ENABLE_SHADOW"
 config.front_end = "WebGpu"
---config.enable_wayland = false
 
 config.term = "xterm-kitty"
 config.enable_kitty_graphics = true
@@ -38,8 +38,6 @@ config.skip_close_confirmation_for_processes_named = {
 }
 
 config.scrollback_lines = 5000
-config.window_background_opacity = 0.965
-config.text_background_opacity = 0.965
 config.macos_window_background_blur = 20
 config.native_macos_fullscreen_mode = true
 
@@ -89,44 +87,44 @@ config.keys = {
 	-- Move between panes
 	{
 		key = "h",
-		mods = "CMD",
+		mods = "ALT",
 		action = act.ActivatePaneDirection("Left"),
 	},
 	{
 		key = "l",
-		mods = "CMD",
+		mods = "ALT",
 		action = act.ActivatePaneDirection("Right"),
 	},
 	{
 		key = "k",
-		mods = "CMD",
+		mods = "ALT",
 		action = act.ActivatePaneDirection("Up"),
 	},
 	{
 		key = "j",
-		mods = "CMD",
+		mods = "ALT",
 		action = act.ActivatePaneDirection("Down"),
 	},
 	-- Resize panes
 	{
 		key = "h",
 		mods = "CMD|SHIFT",
-		action = act.AdjustPaneSize({ "Left", 5 }),
+		action = act.AdjustPaneSize({ "Left", 10 }),
 	},
 	{
 		key = "l",
 		mods = "CMD|SHIFT",
-		action = act.AdjustPaneSize({ "Right", 5 }),
+		action = act.AdjustPaneSize({ "Right", 10 }),
 	},
 	{
 		key = "k",
 		mods = "CMD|SHIFT",
-		action = act.AdjustPaneSize({ "Up", 5 }),
+		action = act.AdjustPaneSize({ "Up", 10 }),
 	},
 	{
 		key = "j",
 		mods = "CMD|SHIFT",
-		action = act.AdjustPaneSize({ "Down", 5 }),
+		action = act.AdjustPaneSize({ "Down", 10 }),
 	},
 
 	{
@@ -138,6 +136,27 @@ config.keys = {
 		key = "n",
 		mods = "ALT",
 		action = act.RotatePanes("CounterClockwise"),
+	},
+	-- Move between tabs
+	{
+		key = "l",
+		mods = "CMD",
+		action = act.ActivateTabRelative(1),
+	},
+	{
+		key = "h",
+		mods = "CMD",
+		action = act.ActivateTabRelative(-1),
+	},
+}
+
+config.colors = {
+	tab_bar = {
+		background = "#1a1b26",
+		active_tab = {
+			fg_color = "#ff9e64",
+			bg_color = "#1a1b26",
+		},
 	},
 }
 

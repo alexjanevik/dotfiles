@@ -29,6 +29,9 @@ return {
 			{ "<leader>s", desc = "Window splitting", icon = "" },
 			{ "<leader>t", desc = "Tabs", icon = "󰓩" },
 			{ "<leader>x", desc = "Diagnostics", icon = "󱖫" },
+
+			{ "<leader>c", desc = "Run Code", icon = "" },
+			{ "<leader>cp", "<Cmd>!python3 %<CR>", desc = "Run Python", icon = "" },
 		},
 	},
 }

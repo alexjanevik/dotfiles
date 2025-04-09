@@ -13,6 +13,10 @@ return {
 		auto_hide = true,
 		tabpages = true,
 
+		sidebar_filetypes = {
+			NvimTree = true,
+		},
+
 		icons = {
 			-- Configure the base icons on the bufferline.
 			-- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
@@ -47,6 +51,8 @@ return {
 	},
 	keys = {
 		{ "<leader>tw", "<cmd>BufferClose<cr>", desc = "Close buffer" },
+		{ "<leader>tl", "<Cmd>BufferNext<CR>", desc = "Go to next buffer" },
+		{ "<leader>th", "<Cmd>BufferPrevious<CR>", desc = "Go to previous buffer" },
 
 		{ "<leader>t1", "<Cmd>BufferGoto 1<CR>", desc = "Go to buffer 1" },
 		{ "<leader>t2", "<Cmd>BufferGoto 2<CR>", desc = "Go to buffer 2" },

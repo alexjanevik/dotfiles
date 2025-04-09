@@ -8,7 +8,7 @@ return {
 				open_no_results = true,
 				win = {
 					position = "bottom",
-					size = { height = 12 },
+					size = { height = 10 },
 				},
 			},
 		},

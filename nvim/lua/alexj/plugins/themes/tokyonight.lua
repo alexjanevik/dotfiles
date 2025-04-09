@@ -4,7 +4,6 @@ return {
 	priority = 1000,
 	opts = {
 		style = "night",
-		transparent = true,
 	},
 
 	config = function(_, opts)

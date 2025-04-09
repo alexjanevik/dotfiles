@@ -29,6 +29,7 @@ return {
 			automatic_installation = true,
 			ensure_installed = {
 				"html",
+				"hls",
 				"omnisharp",
 				"ast_grep",
 				"cssls",
@@ -54,10 +55,9 @@ return {
 			ensure_installed = {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
 				"pylint", -- python linter
 				"eslint_d", -- js linter
+				"fourmolu", -- haskell formatter
 			},
 		})
 	end,

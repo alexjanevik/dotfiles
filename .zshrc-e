@@ -44,5 +44,3 @@ alias lg="lazygit"
 . ~/.dotfiles/zsh/venv_wrapper # python virtualenv wrapper
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
-[ -f "/Users/alexjanevik/.ghcup/env" ] && . "/Users/alexjanevik/.ghcup/env" # ghcup-env

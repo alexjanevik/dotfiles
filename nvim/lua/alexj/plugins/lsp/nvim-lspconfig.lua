@@ -71,11 +71,11 @@ return {
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
-		-- (not in youtube nvim video)
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+		local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+		--local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 		end
 
 		mason_lspconfig.setup_handlers({
@@ -126,7 +126,6 @@ return {
 						"scss",
 						"less",
 						"svelte",
-						"pyright",
 					},
 				})
 			end,
@@ -143,6 +142,30 @@ return {
 							completion = {
 								callSnippet = "Replace",
 							},
+						},
+					},
+				})
+			end,
+			["hsl"] = function()
+				-- configure haskell server
+				lspconfig["haskell-language-server"].setup({
+					capabilities = capabilities,
+					filetypes = { "haskell", "lhaskell", "cabal" },
+				})
+			end,
+			["pyright"] = function()
+				-- configure python server
+				lspconfig["pyright"].setup({
+					capabilities = capabilities,
+					filetypes = { "python" },
+					settings = {
+						python = {
+							analysis = {
+								typeCheckingMode = "basic",
+								autoImportCompletions = true,
+								useLibraryCodeForTypes = true,
+							},
+							venvPath = "~/.virtualenvs/",
 						},
 					},
 				})
