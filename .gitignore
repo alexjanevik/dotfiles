@@ -1,5 +1,4 @@
 /*
-*
 
 # Files to not ignore
 !/.gitignore
@@ -12,3 +11,4 @@
 !/wezterm
 
 **/.DS_Store
+*/.gitconfig
