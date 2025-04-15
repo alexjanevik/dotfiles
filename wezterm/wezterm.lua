@@ -13,8 +13,8 @@ config.font_size = 12
 config.color_scheme = "Tokyo Night"
 
 -- Window settings
-config.initial_cols = 100
-config.initial_rows = 36
+config.initial_cols = 80
+config.initial_rows = 24
 
 config.window_padding = {
 	left = "0cell",
@@ -39,6 +39,8 @@ config.skip_close_confirmation_for_processes_named = {
 
 config.scrollback_lines = 5000
 config.macos_window_background_blur = 20
+config.window_background_opacity = 0.95
+config.text_background_opacity = 0.95
 config.native_macos_fullscreen_mode = true
 
 -- Performance Settings
@@ -54,7 +56,26 @@ config.use_fancy_tab_bar = false
 -- Hotkeys
 local act = wezterm.action
 config.keys = {
-	{ -- Split window vertically
+
+	-- Close window / pane
+	{
+		key = "w",
+		mods = "CMD",
+		action = act.CloseCurrentTab({ confirm = false }),
+	},
+	{
+		key = "W",
+		mods = "CMD|SHIFT",
+		action = act.CloseCurrentPane({ confirm = false }),
+	},
+	--[[
+	{ -- Fullscreen
+		key = "f",
+		mods = "CMD",
+		action = act.ToggleFullScreen,
+	},
+
+  { -- Split window vertically
 		key = "-",
 		mods = "CMD",
 		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
@@ -67,24 +88,8 @@ config.keys = {
 			direction = "Right",
 		}),
 	},
-	-- Close window / pane
-	{
-		key = "w",
-		mods = "CMD",
-		action = act.CloseCurrentTab({ confirm = false }),
-	},
-	{
-		key = "W",
-		mods = "CMD|SHIFT",
-		action = act.CloseCurrentPane({ confirm = false }),
-	},
+  -- Move between panes
 
-	{ -- Fullscreen
-		key = "f",
-		mods = "CMD",
-		action = act.ToggleFullScreen,
-	},
-	-- Move between panes
 	{
 		key = "h",
 		mods = "ALT",
@@ -137,6 +142,8 @@ config.keys = {
 		mods = "ALT",
 		action = act.RotatePanes("CounterClockwise"),
 	},
+	]]
+	--
 	-- Move between tabs
 	{
 		key = "l",

@@ -7,6 +7,9 @@ return {
 	},
 	init = function()
 		vim.g.barbar_auto_setup = false
+		vim.cmd([[
+      hi BufferTabpageFill guibg=NONE
+    ]])
 	end,
 	opts = {
 		animation = true,

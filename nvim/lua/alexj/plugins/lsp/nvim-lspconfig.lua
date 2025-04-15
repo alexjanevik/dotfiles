@@ -165,7 +165,6 @@ return {
 								autoImportCompletions = true,
 								useLibraryCodeForTypes = true,
 							},
-							venvPath = "~/.virtualenvs/",
 						},
 					},
 				})
