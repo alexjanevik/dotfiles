@@ -39,8 +39,8 @@ config.skip_close_confirmation_for_processes_named = {
 
 config.scrollback_lines = 5000
 config.macos_window_background_blur = 20
-config.window_background_opacity = 0.95
-config.text_background_opacity = 0.95
+config.window_background_opacity = 0.965
+config.text_background_opacity = 0.965
 config.native_macos_fullscreen_mode = true
 
 -- Performance Settings
