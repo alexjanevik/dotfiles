@@ -1,0 +1,48 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# bsp or float (default: float)
+yabai -m config layout bsp
+
+# Set all padding and gaps to 20pt (default: 0)
+yabai -m config top_padding    10
+yabai -m config bottom_padding 10
+yabai -m config left_padding   10
+yabai -m config right_padding  10
+yabai -m config window_gap     10
+
+# Set opacity and shadows
+yabai -m config window_shadow float
+yabai -m config window_opacity on
+yabai -m config normal_window_opacity 0.975
+yabai -m config window_opacity_duration 0.1
+
+# New window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# float system preferences. Most of these just diable Yabai form resizing them.
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Disk Utility$" manage=off
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="Calendar" manage=off
+yabai -m rule --add app="Bitwarden" manage=off
+yabai -m rule --add app="^Spotify$" manage=off
+yabai -m rule --add app="^Logi Options$" manage=off
+yabai -m rule --add app="Outlook" manage=off
+
+yabai -m rule --add app="python3" manage=off
+
+# Window animations
+#yabai -m config window_animation_duration 0.05
+#yabai -m config window_animation_easing ease_in_out_quad
+
+# Feedback color
+yabai -m config insert_feedback_color 0xffc53b53
+
+# Set the default window border colors using JankyBorders
+borders style=round active_color=0xffff757f  width=3 &
+

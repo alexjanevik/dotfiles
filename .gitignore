@@ -1,1 +1,11 @@
-**/.DS_Store
+/*
+
+# Files to not ignore
+!/.gitignore
+!/.zshrc
+
+# Folder to not ignore
+!/zsh
+!/nvim
+!/yabai
+!/wezterm

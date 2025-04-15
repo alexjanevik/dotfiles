@@ -41,7 +41,7 @@ export PATH=$PATH:/usr/local/opt/tcl-tk/bin
 
 alias lg="lazygit"
 
-. ~/.dotfiles/zsh/venv_wrapper # python virtualenv wrapper
+. ~/.config/zsh/venv_wrapper # python virtualenv wrapper
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
