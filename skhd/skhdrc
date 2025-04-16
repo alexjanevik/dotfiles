@@ -19,6 +19,9 @@ alt + cmd - l : yabai -m window --resize right:40:0
 alt + cmd - r : yabai -m space --balance
 alt + cmd - c : yabai -m window --ratio abs:0.8
 
+alt + cmd - y : yabai -m space --rotate 270
+alt + cmd - t : yabai -m space --rotate 90
+
 # floating windows
 alt - f : yabai -m window --toggle float
 
