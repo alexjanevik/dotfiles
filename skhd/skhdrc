@@ -28,7 +28,7 @@ alt - f : yabai -m window --toggle float
 
 ### application shortcuts
 # terminal
-alt - n : /Applications/WezTerm.app/Contents/MacOS/wezterm
+cmd - n : /Applications/WezTerm.app/Contents/MacOS/wezterm
 # browser
 alt - b : /Applications/Firefox.app/Contents/MacOS/firefox
 # finder
