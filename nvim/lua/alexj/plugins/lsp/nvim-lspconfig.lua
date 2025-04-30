@@ -146,13 +146,6 @@ return {
 					},
 				})
 			end,
-			["hsl"] = function()
-				-- configure haskell server
-				lspconfig["haskell-language-server"].setup({
-					capabilities = capabilities,
-					filetypes = { "haskell", "lhaskell", "cabal" },
-				})
-			end,
 			["pyright"] = function()
 				-- configure python server
 				lspconfig["pyright"].setup({
