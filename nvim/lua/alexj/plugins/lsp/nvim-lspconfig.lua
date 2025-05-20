@@ -162,6 +162,13 @@ return {
 					},
 				})
 			end,
+			["glsl_analyzer"] = function()
+				-- configure glsl language server
+				lspconfig["glsl_analyzer"].setup({
+					capabilities = capabilities,
+					filetypes = { "glsl", "frag", "vert", "comp" },
+				})
+			end,
 		})
 	end,
 }

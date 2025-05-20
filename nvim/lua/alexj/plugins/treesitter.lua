@@ -5,10 +5,17 @@ return {
 	dependencies = {
 		"windwp/nvim-ts-autotag",
 	},
+
 	config = function()
+		vim.filetype.add({
+			extension = {
+				frag = "glsl",
+				vert = "glsl",
+			},
+		})
+
 		-- import nvim-treesitter plugin
 		local treesitter = require("nvim-treesitter.configs")
-
 		-- configure treesitter
 		treesitter.setup({ -- enable syntax highlighting
 			highlight = {
@@ -53,6 +60,7 @@ return {
 				"python",
 				"haskell",
 				"markdown",
+				"glsl",
 			},
 			incremental_selection = {
 				enable = true,

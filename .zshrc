@@ -46,3 +46,5 @@ alias lg="lazygit"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 [ -f "/Users/alexjanevik/.ghcup/env" ] && . "/Users/alexjanevik/.ghcup/env" # ghcup-env
+
+export PATH=$PATH:$HOME/.lsp/bin

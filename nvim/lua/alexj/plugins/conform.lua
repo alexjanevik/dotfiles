@@ -21,6 +21,8 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				c = { "prettier" },
+				frag = { "clang-format" },
+				vert = { "clang-format" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
