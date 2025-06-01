@@ -1,56 +1,55 @@
 ### yabai shortcuts
 # space managerment
-alt - n : yabai -m space --create 
-alt - w : yabai -m space --destroy
-alt + cmd - h : yabai -m space --focus prev || yabai -m space --focus last
-alt + cmd - l : yabai -m space --focus next || yabai -m space --focus first
+alt - n: yabai -m space --create && yabai -m space --focus last
+alt - w: yabai -m space --destroy
+alt + cmd - h: yabai -m space --focus prev || yabai -m space --focus last
+alt + cmd - l: yabai -m space --focus next || yabai -m space --focus first
 
 # focus spaces
-alt - 1 : yabai -m space --focus 1
-alt - 2 : yabai -m space --focus 2
-alt - 3 : yabai -m space --focus 3
-alt - 4 : yabai -m space --focus 4
-alt - 5 : yabai -m space --focus 5
-alt - 6 : yabai -m space --focus 6
+alt - 1: yabai -m space --focus 1
+alt - 2: yabai -m space --focus 2
+alt - 3: yabai -m space --focus 3
+alt - 4: yabai -m space --focus 4
+alt - 5: yabai -m space --focus 5
+alt - 6: yabai -m space --focus 6
 
 # move windows to spaces
-alt + cmd - 1 : yabai -m window --space 1 --focus
-alt + cmd - 2 : yabai -m window --space 2 --focus
-alt + cmd - 3 : yabai -m window --space 3 --focus
-alt + cmd - 4 : yabai -m window --space 4 --focus
-alt + cmd - 5 : yabai -m window --space 5 --focus
-alt + cmd - 6 : yabai -m window --space 6 --focus
+alt + shift - 1: yabai -m window --space 1 --focus
+alt + shift - 2: yabai -m window --space 2 --focus
+alt + shift - 3: yabai -m window --space 3 --focus
+alt + shift - 4: yabai -m window --space 4 --focus
+alt + shift - 5: yabai -m window --space 5 --focus
+alt + shift - 6: yabai -m window --space 6 --focus
 
 # focus windows
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+alt - h: yabai -m window --focus west
+alt - j: yabai -m window --focus south
+alt - k: yabai -m window --focus north
+alt - l: yabai -m window --focus east
 
 # swap windows
-alt + shift - h : yabai -m window --swap west
-alt + shift - j : yabai -m window --swap south
-alt + shift - k : yabai -m window --swap north
-alt + shift - l : yabai -m window --swap east
+alt + shift - h: yabai -m window --swap west
+alt + shift - j: yabai -m window --swap south
+alt + shift - k: yabai -m window --swap north
+alt + shift - l: yabai -m window --swap east
 
 # scale windows
-alt + cmd - r : yabai -m space --balance
-alt + cmd - c : yabai -m window --ratio abs:0.8
+alt + cmd - r: yabai -m space --balance
+alt + cmd - c: yabai -m window --ratio abs:0.8
 
 # rotate windows
-alt + shift - y : yabai -m space --rotate 270
-alt + shift - t : yabai -m space --rotate 90
+alt + shift - y: yabai -m space --rotate 270
+alt + shift - t: yabai -m space --rotate 90
 
 # floating windows
-alt - f : yabai -m window --toggle float
-
+alt - f: yabai -m window --toggle float
 
 ### application shortcuts
 # terminal
-alt - t : /Applications/WezTerm.app/Contents/MacOS/wezterm
+alt - t: /Applications/WezTerm.app/Contents/MacOS/wezterm
 # browser
-alt - b : /Applications/Firefox.app/Contents/MacOS/firefox
+alt - b: /Applications/Firefox.app/Contents/MacOS/firefox
 # finder
-alt - e : open -R $HOME'/Applications/'
+alt - e: open -R $HOME'/Applications/'
 
-alt - s : /Applications/
+alt - s: /Applications/
