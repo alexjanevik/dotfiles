@@ -10,6 +10,8 @@ yabai -m config bottom_padding 5
 yabai -m config left_padding   5
 yabai -m config right_padding  5
 yabai -m config window_gap     5
+
+# make room for sketchybar
 yabai -m config external_bar all:$(sketchybar --query bar | jq .height):0
 
 # Set opacity and shadows
@@ -44,4 +46,4 @@ yabai -m rule --add app="python" manage=off
 # Set the default window border colors using JankyBorders
 borders style=round active_color=0x60ffffff  width=3 &
 # Feedback color
-yabai -m config insert_feedback_color 0x60ffffff 
+yabai -m config insert_feedback_color 0x60ffffff

@@ -51,4 +51,6 @@ alt - t : /Applications/WezTerm.app/Contents/MacOS/wezterm
 # browser
 alt - b : /Applications/Firefox.app/Contents/MacOS/firefox
 # finder
-alt - e : open -R $HOME'/Applications/' 
+alt - e : open -R $HOME'/Applications/'
+
+alt - s : /Applications/
