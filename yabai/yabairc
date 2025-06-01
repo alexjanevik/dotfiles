@@ -4,17 +4,18 @@ sudo yabai --load-sa
 # bsp or float (default: float)
 yabai -m config layout bsp
 
-# Set all padding and gaps to 20pt (default: 0)
-yabai -m config top_padding    10
-yabai -m config bottom_padding 10
-yabai -m config left_padding   10
-yabai -m config right_padding  10
-yabai -m config window_gap     10
+# Set all padding and gaps to 10pt (default: 0)
+yabai -m config top_padding    5
+yabai -m config bottom_padding 5
+yabai -m config left_padding   5
+yabai -m config right_padding  5
+yabai -m config window_gap     5
+yabai -m config external_bar all:$(sketchybar --query bar | jq .height):0
 
 # Set opacity and shadows
 yabai -m config window_shadow float
 yabai -m config window_opacity on
-yabai -m config normal_window_opacity 0.975
+yabai -m config normal_window_opacity 0.95
 yabai -m config window_opacity_duration 0.1
 
 # New window spawns to the right if vertical split, or bottom if horizontal split
@@ -41,6 +42,6 @@ yabai -m rule --add app="python" manage=off
 #yabai -m config window_animation_easing ease_in_out_quad
 
 # Set the default window border colors using JankyBorders
-borders style=round active_color=0x66ff757f  width=3 &
+borders style=round active_color=0x60ffffff  width=3 &
 # Feedback color
-yabai -m config insert_feedback_color 0x66ff757f 
+yabai -m config insert_feedback_color 0x60ffffff 
