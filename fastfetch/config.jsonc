@@ -3,6 +3,14 @@
     "logo": {
         "type": "small"
     },
+    // "logo": {
+    //     "padding": {
+    //         "top": 0
+    //     },
+    //     "source": "./img/earth.gif",
+    //     "type": "iterm",
+    //     "width": 20
+    // },
     "display": {
         "separator": "  ",
         "color": {
