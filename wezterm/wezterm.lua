@@ -9,8 +9,9 @@ end
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 12
 
--- config.color_scheme = "Catppuccin Mocha"
 config.color_scheme = "Tokyo Night"
+-- config.color_scheme = "Catppuccin Mocha"
+-- config.color_scheme = "CursorDark"
 
 -- Window settings
 config.initial_cols = 80
@@ -30,7 +31,7 @@ config.window_decorations =
 	"MACOS_USE_BACKGROUND_COLOR_AS_TITLEBAR_COLOR | TITLE | INTEGRATED_BUTTONS | RESIZE | MACOS_FORCE_ENABLE_SHADOW"
 config.front_end = "WebGpu"
 
-config.term = "xterm-kitty"
+--config.term = "xterm-kitty"
 config.enable_kitty_graphics = true
 config.skip_close_confirmation_for_processes_named = {
 	"zsh",
@@ -159,10 +160,14 @@ config.keys = {
 
 config.colors = {
 	tab_bar = {
-		background = "#1a1b26",
+		background = "1a1b26",
 		active_tab = {
-			fg_color = "#ff9e64",
-			bg_color = "#1a1b26",
+			fg_color = "9ece6a",
+			bg_color = "1a1b26",
+		},
+		inactive_tab = {
+			fg_color = "565f89",
+			bg_color = "1a1b26",
 		},
 	},
 }

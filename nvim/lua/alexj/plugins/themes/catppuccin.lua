@@ -2,7 +2,10 @@ return {
 	"catppuccin/nvim",
 	name = "catppuccin",
 	priority = 1000,
-	config = function()
+	opts = {
+		transparent = true,
+	},
+	config = function(_, opts)
 		local latte = require("catppuccin.palettes").get_palette("latte")
 		local frappe = require("catppuccin.palettes").get_palette("frappe")
 		local macchiato = require("catppuccin.palettes").get_palette("macchiato")

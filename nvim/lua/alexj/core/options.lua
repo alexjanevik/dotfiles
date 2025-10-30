@@ -1,5 +1,5 @@
 vim.cmd("let g:netrw_liststyle = 3")
-vim.g.term = "xterm-kitty"
+--vim.g.term = "xterm-kitty"
 
 local opt = vim.opt
 
@@ -21,18 +21,17 @@ opt.autoindent = true
 opt.ignorecase = true
 opt.smartcase = true
 
-opt.cursorline = true
+opt.cursorline = false
 
 -- termguicolors
 opt.background = "dark"
 opt.signcolumn = "yes"
+opt.termguicolors = true
 
 vim.cmd([[
   autocmd VimEnter * highlight Normal ctermbg=NONE guibg=NONE
   autocmd VimEnter * highlight NonText ctermbg=NONE
 ]])
-
-opt.termguicolors = true
 
 -- backspace
 opt.backspace = "indent,eol,start"
