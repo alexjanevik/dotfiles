@@ -45,7 +45,3 @@ yabai -m rule --add app="python" manage=off
 borders style=round active_color=0x40ffffff  width=3&
 # Feedback color
 yabai -m config insert_feedback_color 0x20ffffff
-
-# focus on last window when the current one is closed
-yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
-yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
