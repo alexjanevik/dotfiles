@@ -9,9 +9,10 @@ end
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 12
 
-config.color_scheme = "Tokyo Night"
+-- config.color_scheme = "Tokyo Night"
 -- config.color_scheme = "Catppuccin Mocha"
 -- config.color_scheme = "CursorDark"
+config.color_scheme = "OneDark (base16)"
 
 -- Window settings
 config.initial_cols = 80
@@ -158,16 +159,31 @@ config.keys = {
 	},
 }
 
+-- tokyo night
+-- config.colors = {
+-- 	tab_bar = {
+-- 		background = "1a1b26",
+-- 		active_tab = {
+-- 			fg_color = "9ece6a",
+-- 			bg_color = "1a1b26",
+-- 		},
+-- 		inactive_tab = {
+-- 			fg_color = "565f89",
+-- 			bg_color = "1a1b26",
+-- 		},
+-- 	},
+-- }
+-- atom dark
 config.colors = {
 	tab_bar = {
-		background = "1a1b26",
+		background = "rgb(41,44,51)",
 		active_tab = {
-			fg_color = "9ece6a",
-			bg_color = "1a1b26",
+			fg_color = "rgb(161,194,129)",
+			bg_color = "rgb(41,44,51)",
 		},
 		inactive_tab = {
-			fg_color = "565f89",
-			bg_color = "1a1b26",
+			fg_color = "rgb(128,132,141)",
+			bg_color = "rgb(41,44,51)",
 		},
 	},
 }
