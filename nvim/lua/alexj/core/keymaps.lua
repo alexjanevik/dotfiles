@@ -9,3 +9,11 @@ keymap.set("n", "<leader>s\\", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>s-", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
 keymap.set("n", "<leader>sw", "<cmd>close<CR>", { desc = "Close current split" })
+
+-- copilot
+vim.g.copilot_no_tab_map = true
+-- my wezterm keybind for CMD + Enter is <Char-0xAA>
+keymap.set("i", "<Char-0xAA>", 'copilot#Accept("\\<CR>")', {
+	expr = true,
+	replace_keycodes = false,
+})

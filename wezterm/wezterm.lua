@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local config = {}
+local nvim_helpers = require("nvim_helpers")
 
 if wezterm.config_builder then
 	config = wezterm.config_builder()
@@ -70,82 +71,6 @@ config.keys = {
 		mods = "CMD|SHIFT",
 		action = act.CloseCurrentPane({ confirm = false }),
 	},
-	--[[
-	{ -- Fullscreen
-		key = "f",
-		mods = "CMD",
-		action = act.ToggleFullScreen,
-	},
-
-  { -- Split window vertically
-		key = "-",
-		mods = "CMD",
-		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
-
-	{ -- Split window horizontally
-		key = "\\",
-		mods = "CMD",
-		action = act.SplitPane({
-			direction = "Right",
-		}),
-	},
-  -- Move between panes
-
-	{
-		key = "h",
-		mods = "ALT",
-		action = act.ActivatePaneDirection("Left"),
-	},
-	{
-		key = "l",
-		mods = "ALT",
-		action = act.ActivatePaneDirection("Right"),
-	},
-	{
-		key = "k",
-		mods = "ALT",
-		action = act.ActivatePaneDirection("Up"),
-	},
-	{
-		key = "j",
-		mods = "ALT",
-		action = act.ActivatePaneDirection("Down"),
-	},
-	-- Resize panes
-	{
-		key = "h",
-		mods = "CMD|SHIFT",
-		action = act.AdjustPaneSize({ "Left", 10 }),
-	},
-	{
-		key = "l",
-		mods = "CMD|SHIFT",
-		action = act.AdjustPaneSize({ "Right", 10 }),
-	},
-	{
-		key = "k",
-		mods = "CMD|SHIFT",
-		action = act.AdjustPaneSize({ "Up", 10 }),
-	},
-	{
-		key = "j",
-		mods = "CMD|SHIFT",
-		action = act.AdjustPaneSize({ "Down", 10 }),
-	},
-
-	{
-		key = "m",
-		mods = "ALT",
-		action = act.RotatePanes("Clockwise"),
-	},
-	{
-		key = "n",
-		mods = "ALT",
-		action = act.RotatePanes("CounterClockwise"),
-	},
-	]]
-	--
 	-- Move between tabs
 	{
 		key = "l",
@@ -157,6 +82,8 @@ config.keys = {
 		mods = "CMD",
 		action = act.ActivateTabRelative(-1),
 	},
+	-- send cmd+enter to nvim as <0xAA>
+	nvim_helpers.bind_super_key_to_vim("Enter"),
 }
 
 -- tokyo night
