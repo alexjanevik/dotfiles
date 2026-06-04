@@ -1,7 +1,7 @@
 # config files 👽
 ### my dotfiles n configs n things!
 
-- wezterm
+- ghostty 
 - zsh
 - neovim
 - yabai
