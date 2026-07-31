@@ -3,13 +3,6 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 keymap.set("n", "<leader>h", ":nohl<CR>", { desc = "Clear search highlights" })
-
--- window management
-keymap.set("n", "<leader>s\\", "<C-w>v", { desc = "Split window vertically" })
-keymap.set("n", "<leader>s-", "<C-w>s", { desc = "Split window horizontally" })
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
-keymap.set("n", "<leader>sw", "<cmd>close<CR>", { desc = "Close current split" })
-
 -- copilot
 vim.g.copilot_no_tab_map = true
 -- my wezterm keybind for CMD + Enter is <Char-0xAA>

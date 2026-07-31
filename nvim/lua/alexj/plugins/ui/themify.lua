@@ -9,6 +9,7 @@ return {
 			"catppuccin/nvim",
 			"olimorris/onedarkpro.nvim",
 			"folke/tokyonight.nvim",
+			"ellisonleao/gruvbox.nvim",
 		})
 	end,
 }

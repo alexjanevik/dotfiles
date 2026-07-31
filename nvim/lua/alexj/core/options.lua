@@ -39,9 +39,5 @@ opt.backspace = "indent,eol,start"
 -- clipboard
 opt.clipboard:append("unnamedplus")
 
--- split windows
-opt.splitright = true
-opt.splitbelow = true
-
 -- neovim python venv
 vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")

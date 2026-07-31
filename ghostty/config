@@ -1,9 +1,10 @@
 # window options
 
-theme = One Double Dark
-font-family = "JetBrains Mono"
+theme = TokyoNight 
+#font-family = "JetBrains Mono"
+font-family = CaskaydiaMono Nerd Font
 font-size = 12
-background-opacity = 0.95
+#background-opacity = 0.95
 background-blur = 20 
 window-padding-x = 16
 window-padding-y = 16
@@ -14,3 +15,4 @@ macos-titlebar-style = hidden
 # cmd+enter for nvim copilot autocomplete
 
 keybind = cmd+enter=text:\xaa
+term = xterm-256color

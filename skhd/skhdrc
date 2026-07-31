@@ -35,7 +35,7 @@ alt + shift - l: yabai -m window --swap east
 
 # scale windows
 alt + cmd - r: yabai -m space --balance
-alt + cmd - c: yabai -m window --ratio abs:0.8
+alt + cmd - c: yabai -m window --ratio abs:0.68
 
 # rotate windows
 alt + shift - y: yabai -m space --rotate 270

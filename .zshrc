@@ -8,7 +8,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$PATH:/Users/alexjanevik/.spicetify
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -49,3 +48,5 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 [ -f "/Users/alexjanevik/.ghcup/env" ] && . "/Users/alexjanevik/.ghcup/env" # ghcup-env
 
 export PATH=$PATH:$HOME/.lsp/bin
+
+export PATH="$HOME/.local/bin:$PATH"
