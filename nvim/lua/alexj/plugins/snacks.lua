@@ -14,17 +14,18 @@ return {
     input = { enabled = true },
     picker = { enabled = true },
     notifier = { enabled = true },
-    scroll = { enabled = true },
     lazygit = { enabled = true },
   },
   keys = {
     {
-      "<leader>f",
+      "<leader>ff",
       function()
         Snacks.picker.files()
       end,
       desc = "Find Files",
     },
+    { "<leader>fr", function() Snacks.picker.recent() end,        desc = "Recent" },
+    { "<leader>n",  function() Snacks.picker.notifications() end, desc = "Notification History" },
     {
       "<leader>l",
       function()

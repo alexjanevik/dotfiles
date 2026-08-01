@@ -32,6 +32,7 @@ vim.cmd([[
   autocmd VimEnter * highlight Normal ctermbg=NONE guibg=NONE
   autocmd VimEnter * highlight NonText ctermbg=NONE
 ]])
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 
 -- backspace
 opt.backspace = "indent,eol,start"

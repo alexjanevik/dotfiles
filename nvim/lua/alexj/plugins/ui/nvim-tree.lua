@@ -38,7 +38,7 @@ return {
     })
 
     -- set keymaps
-    local keymap = vim.keymap                                                                   -- for conciseness
+    local keymap = vim.keymap
 
     keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
     keymap.set(

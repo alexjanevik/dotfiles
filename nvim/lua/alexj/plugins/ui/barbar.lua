@@ -14,7 +14,7 @@ return {
     tabpages = true,
 
     sidebar_filetypes = {
-      NvimTree = true,
+      --NvimTree = { enabled = true },
     },
 
     icons = {

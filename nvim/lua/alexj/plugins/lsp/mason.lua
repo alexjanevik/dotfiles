@@ -92,7 +92,7 @@ return {
         map("n", "<leader>gd", vim.lsp.buf.definition, "Go to definition")
         map("n", "<leader>gr", vim.lsp.buf.references, "References")
         map("n", "<leader>gi", vim.lsp.buf.implementation, "Implementations")
-        map("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
+        map("n", "<leader>r", vim.lsp.buf.rename, "Rename")
         map("n", "<leader>ca", vim.lsp.buf.code_action, "Code action")
         map("n", "<leader>f", function()
           vim.lsp.buf.format({ async = true })
