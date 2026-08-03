@@ -1,6 +1,7 @@
 # window options
 
-theme = TokyoNight 
+#theme = TokyoNight
+theme = Gruvbox Material
 #font-family = "JetBrains Mono"
 font-family = CaskaydiaMono Nerd Font
 font-size = 12

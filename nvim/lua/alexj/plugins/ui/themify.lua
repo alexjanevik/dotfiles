@@ -1,15 +1,17 @@
 return {
-  "lmantw/themify.nvim",
+	"lmantw/themify.nvim",
 
-  lazy = false,
-  priority = 999,
+	lazy = false,
+	priority = 999,
 
-  config = function()
-    require("themify").setup({
-      "catppuccin/nvim",
-      "olimorris/onedarkpro.nvim",
-      "folke/tokyonight.nvim",
-      "ellisonleao/gruvbox.nvim",
-    })
-  end,
+	config = function()
+		require("themify").setup({
+			"catppuccin/nvim",
+			"olimorris/onedarkpro.nvim",
+			"folke/tokyonight.nvim",
+			"sainnhe/gruvbox-material",
+			"ellisonleao/gruvbox.nvim",
+			"Mofiqul/dracula.nvim",
+		})
+	end,
 }
