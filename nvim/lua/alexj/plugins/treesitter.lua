@@ -1,6 +1,7 @@
 local parsers = {
 	"bash",
 	"c",
+	"cpp",
 	"css",
 	"dockerfile",
 	"gitignore",

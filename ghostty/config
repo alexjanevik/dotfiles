@@ -1,9 +1,9 @@
 # window options
 
 #theme = TokyoNight
-theme = Gruvbox Material
-#font-family = "JetBrains Mono"
-font-family = CaskaydiaMono Nerd Font
+theme = Gruvbox Material Dark
+font-family = "JetBrains Mono"
+#font-family = CaskaydiaMono Nerd Font
 font-size = 12
 background-opacity = 0.95
 background-blur = 20 
@@ -17,3 +17,8 @@ macos-titlebar-style = hidden
 
 keybind = cmd+enter=text:\xaa
 term = xterm-256color
+
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-ghost-color = #ffffff
+macos-icon-screen-color = #1a1b26
