@@ -10,10 +10,17 @@ return {
 		-- refer to the configuration section below
 		bigfile = { enabled = true },
 		-- dashboard = { enabled = true },
-		-- explorer = { enabled = true, replace_netrw = true, trash = true },
+		explorer = {
+			enabled = true,
+			replace_netrw = true,
+			trash = true,
+		},
+		picker = {
+			hidden = true,
+			ignored = true,
+		},
 		indent = { enabled = true },
 		input = { enabled = true },
-		picker = { enabled = true },
 		notifier = { enabled = true },
 		lazygit = { enabled = true },
 		image = { enabled = true },
@@ -32,6 +39,13 @@ return {
 				Snacks.lazygit()
 			end,
 			desc = "Lazygit",
+		},
+		{
+			"<leader>ee",
+			function()
+				Snacks.explorer()
+			end,
+			desc = "Snacks Explorer",
 		},
 	},
 }
