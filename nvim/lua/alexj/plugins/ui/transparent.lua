@@ -1,5 +1,6 @@
 return {
 	"xiyaowong/transparent.nvim",
+	priority = 900,
 	config = function()
 		require("transparent").setup({
 			enable = true,

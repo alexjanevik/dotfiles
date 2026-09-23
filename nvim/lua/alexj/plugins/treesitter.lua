@@ -7,7 +7,6 @@ local parsers = {
 	"gitignore",
 	"glsl",
 	"graphql",
-	"haskell",
 	"html",
 	"java",
 	"javascript",
@@ -25,6 +24,7 @@ local parsers = {
 	"vim",
 	"vimdoc",
 	"yaml",
+	"latex",
 }
 
 return {

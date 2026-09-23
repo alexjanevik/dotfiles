@@ -2,7 +2,7 @@ return {
 	"lmantw/themify.nvim",
 
 	lazy = false,
-	priority = 999,
+	priority = 1000,
 
 	config = function()
 		require("themify").setup({

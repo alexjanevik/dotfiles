@@ -2,8 +2,8 @@
 
 #theme = TokyoNight
 theme = Gruvbox Material Dark
-font-family = "JetBrains Mono"
-#font-family = CaskaydiaMono Nerd Font
+font-family = "JetBrainsMono Nerd Font"
+# font-family = CaskaydiaMono Nerd Font
 font-size = 12
 background-opacity = 0.95
 background-blur = 20 
