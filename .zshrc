@@ -40,6 +40,7 @@ export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
 export PATH=$PATH:/usr/local/opt/tcl-tk/bin
 
 alias lg="lazygit"
+alias vim="nvim"
 
 . ~/.config/zsh/venv_wrapper # python virtualenv wrapper
 
