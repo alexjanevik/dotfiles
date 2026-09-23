@@ -11,6 +11,7 @@ return {
 			typescriptreact = { "eslint_d" },
 			svelte = { "eslint_d" },
 			python = { "pylint" },
+			markdown = { "markdownlint" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
@@ -29,5 +30,12 @@ return {
 		-- Set pylint to work in virtualenv
 		require("lint").linters.pylint.cmd = "python"
 		require("lint").linters.pylint.args = { "-m", "pylint", "-f", "json" }
+
+		-- disable MD013 (line length) for markdownlint
+		local markdownlint = lint.linters.markdownlint
+		markdownlint.args = vim.list_extend(markdownlint.args or {}, {
+			"--disable",
+			"MD013",
+		})
 	end,
 }
