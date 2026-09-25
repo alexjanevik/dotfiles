@@ -5,6 +5,11 @@ return {
 		"saghen/blink.cmp",
 	},
 
+	init = function()
+		-- Set the global variable BEFORE the plugin loads
+		vim.g.markview_alpha = 0.00
+	end,
+
 	config = function()
 		local presets = require("markview.presets")
 
