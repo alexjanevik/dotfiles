@@ -69,7 +69,6 @@ return {
 				"stylua",
 				"pylint",
 				"eslint_d",
-				"fourmolu",
 				"clang-format",
 				"ruff",
 			},
