@@ -7,6 +7,16 @@ return {
 		config = function()
 			local get_hex = require("cokeline.hlgroups").get_hl_attr
 
+			local map = vim.api.nvim_set_keymap
+
+			map("n", "<leader>tl", "<Plug>(cokeline-focus-prev)", { silent = true, desc = "Focus previous buffer" })
+			map("n", "<leader>th", "<Plug>(cokeline-focus-next)", { silent = true, desc = "Focus next buffer" })
+			map("n", "<leader>tw", "<Plug>(cokeline-pick-close)", { silent = true, desc = "Close current buffer" })
+
+			for i = 1, 9 do
+				map("n", ("<leader>ts%s"):format(i), ("<Plug>(cokeline-focus-%s)"):format(i), { silent = true })
+			end
+
 			require("cokeline").setup({
 				default_hl = {
 					fg = function(buffer)
