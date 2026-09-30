@@ -2,7 +2,6 @@ vim.cmd("let g:netrw_liststyle = 3")
 vim.g.term = "xterm-kitty"
 
 local opt = vim.opt
-vim.g.gruvbox_material_transparent_background = 2
 
 -- opt.colorcolumn = "80"
 opt.wrap = true

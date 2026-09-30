@@ -11,6 +11,7 @@ return {
 				"FloatBorder",
 				"FloatTitle",
 				"FloatFooter",
+				"WinSeparator",
 			},
 		})
 	end,
