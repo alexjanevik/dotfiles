@@ -2,6 +2,10 @@ return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
 	opts = {
+		lsp = {
+			-- Servers report analysis progress on edits; keep these out of popups.
+			progress = { enabled = false },
+		},
 		cmdline = {
 			enabled = true,
 			view = "cmdline",
@@ -12,7 +16,6 @@ return {
 		},
 		messages = {
 			enabled = true,
-			view_history = "popup",
 		},
 	},
 	dependencies = {

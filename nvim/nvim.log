@@ -1,2 +1,3 @@
 WRN 2026-10-01T15:24:38.571 ?.91710    server_start:197: Failed to start server: operation not permitted: /var/folders/gg/nmln8y7503n0x60cm81840_m0000gn/T/nvim.alexjanevik/BuhBom/nvim.91710.0
 WRN 2026-10-01T15:24:58.833 ?.91737    server_start:197: Failed to start server: operation not permitted: /var/folders/gg/nmln8y7503n0x60cm81840_m0000gn/T/nvim.alexjanevik/fRMztV/nvim.91737.0
+WRN 2026-10-01T16:38:48.525 ?.24606    server_start:197: Failed to start server: operation not permitted: /var/folders/gg/nmln8y7503n0x60cm81840_m0000gn/T/nvim.alexjanevik/g7TUN7/nvim.24606.0
