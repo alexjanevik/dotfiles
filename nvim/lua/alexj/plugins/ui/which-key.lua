@@ -1,6 +1,6 @@
 return {
 	"folke/which-key.nvim",
-	event = "VeryLazy",
+	lazy = false,
 	opts = {
 		preset = "helix",
 		delay = 0,
@@ -12,33 +12,140 @@ return {
 		},
 		sort = { "alphanum" },
 		spec = {
-			{ "<leader>t1", "<Plug>(cokeline-focus-1)", hidden = true },
-			{ "<leader>t2", "<Plug>(cokeline-focus-2)", hidden = true },
-			{ "<leader>t3", "<Plug>(cokeline-focus-3)", hidden = true },
-			{ "<leader>t4", "<Plug>(cokeline-focus-4)", hidden = true },
-			{ "<leader>t5", "<Plug>(cokeline-focus-5)", hidden = true },
-			{ "<leader>t6", "<Plug>(cokeline-focus-6)", hidden = true },
-			{ "<leader>t7", "<Plug>(cokeline-focus-7)", hidden = true },
-			{ "<leader>t8", "<Plug>(cokeline-focus-8)", hidden = true },
-			{ "<leader>t9", "<Plug>(cokeline-focus-9)", hidden = true },
+			-- Buffers
+			{
+				{ "<leader>t", group = "Buffers", icon = "󰓩 " },
+				{ "<leader>th", "<plug>(cokeline-focus-prev)", desc = "Focus previous buffer", icon = " " },
+				{ "<leader>tl", "<plug>(cokeline-focus-next)", desc = "Focus next buffer", icon = " " },
+				{ "<leader>tw", "<cmd>bdelete<cr>", desc = "Close current buffer", icon = "󰭌 " },
+				{ "<leader>t#", desc = "Focus buffer 1-9", icon = "󱦞 " },
+				{ "<leader>t1", "<plug>(cokeline-focus-1)", hidden = true },
+				{ "<leader>t2", "<plug>(cokeline-focus-2)", hidden = true },
+				{ "<leader>t3", "<plug>(cokeline-focus-3)", hidden = true },
+				{ "<leader>t4", "<plug>(cokeline-focus-4)", hidden = true },
+				{ "<leader>t5", "<plug>(cokeline-focus-5)", hidden = true },
+				{ "<leader>t6", "<plug>(cokeline-focus-6)", hidden = true },
+				{ "<leader>t7", "<plug>(cokeline-focus-7)", hidden = true },
+				{ "<leader>t8", "<plug>(cokeline-focus-8)", hidden = true },
+				{ "<leader>t9", "<plug>(cokeline-focus-9)", hidden = true },
+			},
 
-			{ "<leader>f", desc = "Fuzzy Find", icon = "󰈞" },
-			{ "<leader>e", desc = "Explorer", icon = "󰙅" },
-			{ "<leader>g", desc = "LSP Config", icon = "" },
+			-- Fuzzy Find
+			{
+				{ "<leader>f", group = "Fuzzy Find", icon = "󰈞 " },
+				{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Find Files", icon = "󰤏 " },
+				{ "<leader>fg", "<cmd>FzfLua grep_visual<cr>", desc = "Grep", icon = "󱩾 " },
+				{ "<leader>fh", "<cmd>FzfLua<cr>", desc = "FzfLua Menu", icon = "󰮫 " },
+			},
 
-			{ "<leader>t", desc = "Buffers", icon = "󰓩" },
-			{ "<leader>th", desc = "Focus previous buffer", icon = "" },
-			{ "<leader>tl", desc = "Focus next buffer", icon = "" },
-			{ "<leader>tw", desc = "Close current buffer", icon = "󰅖" },
-			{ "<leader>t#", desc = "Focus buffer 1-9", icon = "󰓩" },
+			-- Snacks
+			{
+				{
+					"<leader>e",
+					function()
+						Snacks.explorer()
+					end,
+					desc = "Explorer",
+					icon = "󰙅 ",
+				},
+				{
+					"<leader>n",
+					function()
+						Snacks.picker.notifications()
+					end,
+					desc = "Notifications",
+					icon = " ",
+				},
+			},
 
-			{ "<leader>x", desc = "Diagnostics", icon = "󱖫" },
-			{ "<leader>n", desc = "Notifications", icon = "" },
-			{ "<leader>c", desc = "Run Code", icon = "" },
-			{ "<leader>cp", "<Cmd>!python3 %<CR>", desc = "Run Python", icon = "" },
-			{ "<leader>l", desc = "Lazygit", icon = "" },
-			{ "<leader>r", desc = "Rename", icon = "󰑕" },
-			{ "<leader>gf", desc = "Format file", icon = "󰴑" },
+			-- LSP
+			{
+				{ "<leader>g", group = "LSP", icon = " " },
+				{
+					"<leader>gd",
+					"<cmd>FzfLua lsp_definitions<cr>",
+					desc = "Go to definition",
+					icon = "󰊱 ",
+				},
+				{
+					"<leader>gr",
+					"<cmd>FzfLua lsp_references<cr>",
+					desc = "References",
+					icon = " ",
+				},
+				{
+					"<leader>gi",
+					"<cmd>FzfLua lsp_implementations<cr>",
+					desc = "Implementations",
+					icon = "󰆧 ",
+				},
+				{
+					"<leader>gn",
+					function()
+						vim.lsp.buf.rename()
+					end,
+					desc = "Rename symbol",
+					icon = " ",
+				},
+				{
+					"<leader>gf",
+					function()
+						require("conform").format({ lsp_format = "fallback", async = false, timeout_ms = 1000 })
+					end,
+					mode = { "n", "v" },
+					desc = "Format file",
+					icon = "󰴑 ",
+				},
+			},
+
+			-- Diagnostics
+			{
+				{ "<leader>x", group = "Diagnostics", icon = "󰒡 " },
+				{
+					"<leader>xw",
+					"<cmd>FzfLua diagnostics_workspace<cr>",
+					desc = "Diagnostics (Workspace)",
+				},
+				{
+					"<leader>xx",
+					"<cmd>FzfLua diagnostics_document<cr>",
+					desc = "Diagnostics (Document)",
+				},
+			},
+
+			-- Code actions
+			{
+				{ "<leader>c", group = "Run Code", icon = " " },
+				{
+					"<leader>ca",
+					"<cmd>FzfLua lsp_code_actions<cr>",
+					desc = "Code action",
+					icon = " ",
+				},
+				{ "<leader>cp", "<cmd>!python3 %<cr>", desc = "Run Python", icon = " " },
+			},
+
+			-- Git
+			{
+				{ "<leader>l", group = "Git", icon = " " },
+				{
+					"<leader>lg",
+					function()
+						Snacks.lazygit()
+					end,
+					desc = "Lazygit",
+					icon = " ",
+				},
+				{ "<leader>lc", "<cmd>FzfLua git_commits<cr>", desc = "Git commits", icon = " " },
+				{ "<leader>lb", "<cmd>FzfLua git_branches<cr>", desc = "Git branches", icon = " " },
+				{ "<leader>ls", "<cmd>FzfLua git_status<cr>", desc = "Git status", icon = "󱖫 " },
+				{ "<leader>lt", "<cmd>FzfLua git_stash<cr>", desc = "Git stash", icon = " " },
+				{ "<leader>ld", "<cmd>FzfLua git_diff<cr>", desc = "Git diff", icon = " " },
+			},
 		},
 	},
+	config = function(_, opts)
+		local wk = require("which-key")
+		wk.setup(opts)
+	end,
 }

@@ -12,6 +12,7 @@ return {
 			trash = true,
 		},
 		picker = {
+			ui_select = false, -- Keep FzfLua as the vim.ui.select backend.
 			hidden = true,
 			ignored = true,
 		},
@@ -21,30 +22,6 @@ return {
 		notifier = { enabled = true },
 		image = { enabled = true },
 	},
-	keys = {
-		{
-			"<leader>n",
-			function()
-				Snacks.picker.notifications()
-			end,
-			desc = "Notification History",
-		},
-		{
-			"<leader>ee",
-			function()
-				Snacks.explorer()
-			end,
-			desc = "Snacks Explorer",
-		},
-		{
-			"<leader>lg",
-			function()
-				Snacks.lazygit()
-			end,
-			desc = "Lazygit",
-		},
-	},
-
 	init = function()
 		-- Workaround: Force Snacks to re-render images on buffer switch
 		vim.api.nvim_create_autocmd("BufWinEnter", {
