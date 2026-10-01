@@ -2,6 +2,9 @@ return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
 	opts = {
+		popupmenu = {
+			enabled = false, -- mini.completion positions its info window beside the native menu.
+		},
 		lsp = {
 			-- Servers report analysis progress on edits; keep these out of popups.
 			progress = { enabled = false },
