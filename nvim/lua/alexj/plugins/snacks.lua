@@ -19,10 +19,10 @@ return {
 			hidden = true,
 			ignored = true,
 		},
+		lazygit = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
-		notifier = { enabled = true },
-		lazygit = { enabled = true },
+		notifier = { enabled = true, wrap = true },
 		image = { enabled = true },
 	},
 	keys = {
@@ -34,18 +34,18 @@ return {
 			desc = "Notification History",
 		},
 		{
-			"<leader>lg",
-			function()
-				Snacks.lazygit()
-			end,
-			desc = "Lazygit",
-		},
-		{
 			"<leader>ee",
 			function()
 				Snacks.explorer()
 			end,
 			desc = "Snacks Explorer",
+		},
+		{
+			"<leader>lg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Lazygit",
 		},
 	},
 

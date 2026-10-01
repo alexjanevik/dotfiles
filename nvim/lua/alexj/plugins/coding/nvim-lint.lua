@@ -5,12 +5,6 @@ return {
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
-			javascript = { "eslint_d" },
-			typescript = { "eslint_d" },
-			javascriptreact = { "eslint_d" },
-			typescriptreact = { "eslint_d" },
-			svelte = { "eslint_d" },
-			python = { "pylint" },
 			markdown = { "markdownlint" },
 		}
 
@@ -26,10 +20,6 @@ return {
 		vim.keymap.set("n", "<leader>gl", function()
 			lint.try_lint()
 		end, { desc = "Trigger linting for current file" })
-
-		-- Set pylint to work in virtualenv
-		--require("lint").linters.pylint.cmd = "python3"
-		--require("lint").linters.pylint.args = { "-m", "pylint", "-f", "json" }
 
 		-- disable MD013 (line length) for markdownlint
 		local markdownlint = lint.linters.markdownlint

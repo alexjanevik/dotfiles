@@ -50,7 +50,10 @@ return {
 						end,
 					},
 					{
-						text = "󰖭",
+						--text = "",
+						text = function(buffer)
+							return buffer.is_hovered and "" or ""
+						end,
 						on_click = function(_, _, _, _, buffer)
 							buffer:delete()
 						end,

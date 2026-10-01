@@ -1,6 +1,6 @@
 return {
 	"ibhagwan/fzf-lua",
-	-- optional for icon support
+	lazy = false,
 	dependencies = { "nvim-mini/mini.icons" },
 	---@module "fzf-lua"
 	---@type fzf-lua.Config|{}
@@ -15,7 +15,6 @@ return {
 	keys = {
 		{ "<leader>ff", "<cmd>FzfLua files<CR>", desc = "Find Files" },
 		{ "<leader>fg", "<cmd>FzfLua grep_visual<CR>", desc = "Grep" },
-		--{ "<leader>fb", "<cmd>FzfLua buffers<CR>", desc = "Buffers" },
 		{ "<leader>fh", "<cmd>FzfLua<CR>", desc = "FzfLua Menu" },
 	},
 	---@diagnostic enable: missing-fields

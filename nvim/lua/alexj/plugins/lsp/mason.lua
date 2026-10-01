@@ -3,150 +3,31 @@ return {
 		"mason-org/mason.nvim",
 		opts = { ui = { border = "rounded" } },
 	},
-
 	{
 		"mason-org/mason-lspconfig.nvim",
-		dependencies = {
-			"mason-org/mason.nvim",
-			"neovim/nvim-lspconfig",
-		},
-		opts = {
-			ensure_installed = {
-				"html",
-				"omnisharp",
-				"cssls",
-				"tailwindcss",
-				"svelte",
-				"lua_ls",
-				"graphql",
-				"eslint",
-				"emmet_ls",
-				"prismals",
-				"pyright",
-				"clangd",
-				"cmake",
-				"rust_analyzer",
-				"sqlls",
-				"jdtls",
-				"jsonls",
-				"glsl_analyzer",
-			},
-			automatic_enable = false,
-		},
+		dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
+		opts = function()
+			return {
+				ensure_installed = vim.tbl_keys(require("alexj.lsp.servers")),
+				-- lspconfig.lua enables our configured servers explicitly.
+				automatic_enable = false,
+			}
+		end,
 	},
-
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		dependencies = {
-			"mason-org/mason.nvim",
-			"mason-org/mason-lspconfig.nvim",
-		},
+		dependencies = { "mason-org/mason.nvim" },
 		opts = {
 			ensure_installed = {
-				-- LSP servers
-				"html",
-				"hls",
-				"omnisharp",
-				"cssls",
-				"tailwindcss",
-				"svelte",
-				"lua_ls",
-				"graphql",
-				"eslint",
-				"emmet_ls",
-				"prismals",
-				"pyright",
-				"clangd",
-				"cmake",
-				"rust_analyzer",
-				"sqlls",
-				"jdtls",
-				"jsonls",
-				"glsl_analyzer",
-
-				-- formatters / linters / external tools
 				"prettier",
 				"stylua",
-				"pylint",
-				"eslint_d",
 				"clang-format",
-				"ruff",
+				"markdownlint",
 			},
 			auto_update = false,
 			run_on_start = true,
 			start_delay = 3000,
 			debounce_hours = 24,
 		},
-	},
-
-	{
-		"neovim/nvim-lspconfig",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-			local on_attach = function(_, bufnr)
-				local map = function(mode, lhs, rhs, desc)
-					vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
-				end
-
-				map("n", "<leader>gd", vim.lsp.buf.definition, "Go to definition")
-				map("n", "<leader>gr", vim.lsp.buf.references, "References")
-				map("n", "<leader>gi", vim.lsp.buf.implementation, "Implementations")
-				map("n", "<leader>r", vim.lsp.buf.rename, "Rename")
-				map("n", "<leader>ca", vim.lsp.buf.code_action, "Code action")
-				map("n", "<leader>f", function()
-					vim.lsp.buf.format({ async = true })
-				end, "Format")
-			end
-
-			local servers = {
-				html = {},
-				hls = {},
-				omnisharp = {},
-				cssls = {},
-				tailwindcss = {},
-				svelte = {},
-				graphql = {},
-				eslint = {},
-				emmet_ls = {},
-				prismals = {},
-				pyright = {},
-				clangd = {},
-				cmake = {},
-				rust_analyzer = {},
-				sqlls = {},
-				jdtls = {},
-				jsonls = {},
-				glsl_analyzer = {},
-				ruff = {},
-
-				lua_ls = {
-					settings = {
-						Lua = {
-							diagnostics = {
-								globals = { "vim" },
-							},
-							workspace = {
-								checkThirdParty = false,
-								library = {
-									vim.env.VIMRUNTIME,
-								},
-							},
-							telemetry = {
-								enable = false,
-							},
-						},
-					},
-				},
-			}
-
-			for server, config in pairs(servers) do
-				config.capabilities = capabilities
-				config.on_attach = on_attach
-				vim.lsp.config(server, config)
-				vim.lsp.enable(server)
-			end
-		end,
 	},
 }

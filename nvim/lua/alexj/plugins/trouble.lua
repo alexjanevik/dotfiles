@@ -13,8 +13,6 @@ return {
 					border = "rounded",
 					title = "Diagnostics",
 					title_pos = "center",
-					--position = "bottom",
-					--size = { height = 10 },
 				},
 			},
 		},
