@@ -17,10 +17,6 @@ return {
 			end,
 		})
 
-		vim.keymap.set("n", "<leader>gl", function()
-			lint.try_lint()
-		end, { desc = "Trigger linting for current file" })
-
 		-- disable MD013 (line length) for markdownlint
 		local markdownlint = lint.linters.markdownlint
 		markdownlint.args = vim.list_extend(markdownlint.args or {}, {
