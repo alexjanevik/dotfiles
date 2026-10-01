@@ -21,6 +21,7 @@ return {
 		input = { enabled = true },
 		notifier = { enabled = true },
 		image = { enabled = true },
+		scroll = { enabled = true },
 	},
 	init = function()
 		-- Workaround: Force Snacks to re-render images on buffer switch
