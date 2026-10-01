@@ -8,8 +8,19 @@ opt.wrap = true
 opt.linebreak = true
 opt.breakindent = true
 
+-- line numbers
 opt.relativenumber = true
 opt.number = true
+opt.cursorline = true
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_set_hl(0, "CursorLineNr", { link = "DiagnosticWarn" })
+	end,
+})
+
+-- mouse
 opt.mousemoveevent = true
 
 -- tabs & indentation
@@ -23,25 +34,13 @@ opt.autoindent = true
 opt.ignorecase = true
 opt.smartcase = true
 
-opt.cursorline = false
-
 -- termguicolors
 opt.background = "dark"
 opt.signcolumn = "yes"
 opt.termguicolors = true
-vim.g.markview_alpha = 1.0
-
---vim.cmd([[
---autocmd VimEnter * highlight Normal ctermbg=NONE guibg=NONE
---autocmd VimEnter * highlight NonText ctermbg=NONE
---]])
---vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 
 -- backspace
 opt.backspace = "indent,eol,start"
 
 -- clipboard
 opt.clipboard:append("unnamedplus")
-
--- neovim python venv
-vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
