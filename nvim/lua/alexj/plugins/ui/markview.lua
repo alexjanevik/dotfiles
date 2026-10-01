@@ -10,9 +10,6 @@ local bg1 = themes[current_theme].bg1
 return {
 	"OXY2DEV/markview.nvim",
 	lazy = false,
-	dependencies = {
-		"saghen/blink.cmp",
-	},
 
 	init = function()
 		vim.g.markview_dark_bg = bg0

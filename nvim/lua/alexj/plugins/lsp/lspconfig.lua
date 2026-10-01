@@ -1,9 +1,13 @@
 return {
 	"neovim/nvim-lspconfig",
-	dependencies = { "saghen/blink.cmp" },
+	dependencies = { "nvim-mini/mini.completion" },
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
-		local capabilities = require("blink.cmp").get_lsp_capabilities()
+		local capabilities = vim.tbl_deep_extend(
+			"force",
+			vim.lsp.protocol.make_client_capabilities(),
+			require("mini.completion").get_lsp_capabilities()
+		)
 
 		local on_attach = function(_, bufnr)
 			local map = function(mode, lhs, rhs, desc)
