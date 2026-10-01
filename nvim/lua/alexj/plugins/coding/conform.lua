@@ -19,7 +19,7 @@ return {
 				graphql = { "prettier" },
 				liquid = { "prettier" },
 				lua = { "stylua" },
-				python = { "ruff" },
+				python = { "ruff_format" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
 				frag = { "clang-format" },
@@ -27,7 +27,6 @@ return {
 			},
 			format_on_save = {
 				lsp_fallback = true,
-				async = false,
 				timeout_ms = 1000,
 			},
 		})

@@ -119,6 +119,7 @@ return {
 				jdtls = {},
 				jsonls = {},
 				glsl_analyzer = {},
+				ruff = {},
 
 				lua_ls = {
 					settings = {

@@ -1,7 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
-		"nvim-tree/nvim-web-devicons",
+		"nvim-mini/mini.icons",
 		"AndreM222/copilot-lualine",
 		"pnx/lualine-lsp-status",
 	},

@@ -28,8 +28,8 @@ return {
 		end, { desc = "Trigger linting for current file" })
 
 		-- Set pylint to work in virtualenv
-		require("lint").linters.pylint.cmd = "python"
-		require("lint").linters.pylint.args = { "-m", "pylint", "-f", "json" }
+		--require("lint").linters.pylint.cmd = "python3"
+		--require("lint").linters.pylint.args = { "-m", "pylint", "-f", "json" }
 
 		-- disable MD013 (line length) for markdownlint
 		local markdownlint = lint.linters.markdownlint

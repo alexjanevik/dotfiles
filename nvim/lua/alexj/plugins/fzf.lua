@@ -1,13 +1,12 @@
 return {
 	"ibhagwan/fzf-lua",
 	-- optional for icon support
-	dependencies = { "nvim-tree/nvim-web-devicons" },
-	-- or if using mini.icons/mini.nvim
-	-- dependencies = { "nvim-mini/mini.icons" },
+	dependencies = { "nvim-mini/mini.icons" },
 	---@module "fzf-lua"
 	---@type fzf-lua.Config|{}
 	---@diagnostic disable: missing-fields
 	opts = {
+		file_icons = "mini",
 		fzf_colors = true,
 		defaults = {
 			formatter = "path.dirname_first", -- or "path.dirname_first"

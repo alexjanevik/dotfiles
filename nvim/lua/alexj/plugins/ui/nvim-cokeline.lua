@@ -2,7 +2,7 @@ return {
 	{
 		"willothy/nvim-cokeline",
 		dependencies = {
-			"nvim-tree/nvim-web-devicons",
+			"nvim-mini/mini.icons",
 		},
 		config = function()
 			local get_hex = require("cokeline.hlgroups").get_hl_attr

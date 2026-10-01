@@ -42,8 +42,6 @@ export PATH=$PATH:/usr/local/opt/tcl-tk/bin
 alias lg="lazygit"
 alias vim="nvim"
 
-. ~/.config/zsh/venv_wrapper # python virtualenv wrapper
-
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 [ -f "/Users/alexjanevik/.ghcup/env" ] && . "/Users/alexjanevik/.ghcup/env" # ghcup-env
