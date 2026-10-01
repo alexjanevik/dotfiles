@@ -23,6 +23,11 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 -- mouse
 opt.mousemoveevent = true
 
+-- folds
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldlevelstart = 99
+
 -- tabs & indentation
 opt.tabstop = 2
 opt.shiftwidth = 2

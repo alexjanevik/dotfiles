@@ -18,8 +18,10 @@ return {
 
 	config = function()
 		local presets = require("markview.presets")
+		require("markview.extras.checkboxes")
 
 		require("markview").setup({
+			---@diagnostic disable-next-line: missing-fields
 			markdown = {
 				headings = presets.headings.glow,
 				block_quotes = presets.block_quotes.obsidian,
@@ -56,11 +58,16 @@ return {
 
 				if next(hl) ~= nil then
 					if group == "MarkviewCodeFg" then
+						---@diagnostic disable-next-line: assign-type-mismatch
 						hl.fg = bg1
 					else
+						---@diagnostic disable-next-line: assign-type-mismatch
 						hl.bg = bg1
 					end
-					vim.api.nvim_set_hl(0, group, hl)
+					vim.api.nvim_set_hl(0, group, {
+						fg = hl.fg,
+						bg = hl.bg,
+					})
 				end
 			end
 		end
