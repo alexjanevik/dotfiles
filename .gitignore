@@ -3,6 +3,7 @@
 # Files to not ignore
 !/.gitignore
 !/.zshrc
+!/README.md
 
 # Folder to not ignore
 !/zsh
