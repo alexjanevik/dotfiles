@@ -11,6 +11,14 @@ return {
 		defaults = {
 			formatter = "path.dirname_first", -- or "path.dirname_first"
 		},
+		grep = {
+			rg_glob = true,
+		},
+		winopts = {
+			preview = {
+				wrap = true,
+			},
+		},
 	},
 	---@diagnostic enable: missing-fields
 	config = function(_, opts)

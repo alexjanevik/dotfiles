@@ -35,10 +35,6 @@ alias ls="eza --icons=always --grid"
 eval "$(zoxide init zsh)"
 alias cd="z"
 
-export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
-export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
-export PATH=$PATH:/usr/local/opt/tcl-tk/bin
-
 alias lg="lazygit"
 alias vim="nvim"
 

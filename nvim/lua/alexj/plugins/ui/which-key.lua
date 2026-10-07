@@ -19,22 +19,24 @@ return {
 				{ "<leader>tl", "<plug>(cokeline-focus-next)", desc = "Focus next buffer", icon = " " },
 				{ "<leader>tw", "<cmd>bdelete<cr>", desc = "Close current buffer", icon = "󰭌 " },
 				{ "<leader>t#", desc = "Focus buffer 1-9", icon = "󱦞 " },
-				{ "<leader>t1", "<plug>(cokeline-focus-1)", hidden = true },
-				{ "<leader>t2", "<plug>(cokeline-focus-2)", hidden = true },
-				{ "<leader>t3", "<plug>(cokeline-focus-3)", hidden = true },
-				{ "<leader>t4", "<plug>(cokeline-focus-4)", hidden = true },
-				{ "<leader>t5", "<plug>(cokeline-focus-5)", hidden = true },
-				{ "<leader>t6", "<plug>(cokeline-focus-6)", hidden = true },
-				{ "<leader>t7", "<plug>(cokeline-focus-7)", hidden = true },
-				{ "<leader>t8", "<plug>(cokeline-focus-8)", hidden = true },
-				{ "<leader>t9", "<plug>(cokeline-focus-9)", hidden = true },
+				{ -- Focus buffer 1-9
+					{ "<leader>t1", "<plug>(cokeline-focus-1)", hidden = true },
+					{ "<leader>t2", "<plug>(cokeline-focus-2)", hidden = true },
+					{ "<leader>t3", "<plug>(cokeline-focus-3)", hidden = true },
+					{ "<leader>t4", "<plug>(cokeline-focus-4)", hidden = true },
+					{ "<leader>t5", "<plug>(cokeline-focus-5)", hidden = true },
+					{ "<leader>t6", "<plug>(cokeline-focus-6)", hidden = true },
+					{ "<leader>t7", "<plug>(cokeline-focus-7)", hidden = true },
+					{ "<leader>t8", "<plug>(cokeline-focus-8)", hidden = true },
+					{ "<leader>t9", "<plug>(cokeline-focus-9)", hidden = true },
+				},
 			},
 
 			-- Fuzzy Find
 			{
-				{ "<leader>f", group = "Fuzzy Find", icon = "󰈞 " },
+				{ "<leader>f", group = "Fuzzy Find", icon = "󰮗 " },
 				{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Find Files", icon = "󰤏 " },
-				{ "<leader>fg", "<cmd>FzfLua grep_visual<cr>", desc = "Grep", icon = "󱩾 " },
+				{ "<leader>fg", "<cmd>FzfLua live_grep<cr>", desc = "Live Grep", icon = "󱩾 " },
 				{ "<leader>fh", "<cmd>FzfLua<cr>", desc = "FzfLua Menu", icon = "󰮫 " },
 			},
 
@@ -54,18 +56,18 @@ return {
 						Snacks.picker.notifications()
 					end,
 					desc = "Notifications",
-					icon = " ",
+					icon = " ",
 				},
 			},
 
 			-- LSP
 			{
-				{ "<leader>g", group = "LSP", icon = " " },
+				{ "<leader>g", group = "LSP", icon = " " },
 				{
 					"<leader>gd",
 					"<cmd>FzfLua lsp_definitions<cr>",
 					desc = "Go to definition",
-					icon = "󰊱 ",
+					icon = " ",
 				},
 				{
 					"<leader>gr",
@@ -96,6 +98,12 @@ return {
 					desc = "Format file",
 					icon = "󰴑 ",
 				},
+				{
+					"<leader>ga",
+					"<cmd>FzfLua lsp_code_actions<cr>",
+					desc = "Code action",
+					icon = " ",
+				},
 			},
 
 			-- Diagnostics
@@ -111,18 +119,6 @@ return {
 					"<cmd>FzfLua diagnostics_document<cr>",
 					desc = "Diagnostics (Document)",
 				},
-			},
-
-			-- Code actions
-			{
-				{ "<leader>c", group = "Run Code", icon = " " },
-				{
-					"<leader>ca",
-					"<cmd>FzfLua lsp_code_actions<cr>",
-					desc = "Code action",
-					icon = " ",
-				},
-				{ "<leader>cp", "<cmd>!python3 %<cr>", desc = "Run Python", icon = " " },
 			},
 
 			-- Git
