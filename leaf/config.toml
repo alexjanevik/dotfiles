@@ -1,0 +1,13 @@
+# leaf configuration file
+
+theme = "./themes/gruvbox-material.toml"
+editor = "nvim"
+# width = terminal width
+watch = true
+extras = ["txt", "json", "yaml"]
+file-picker-width = "78cells"
+main-line-numbers = false
+code-line-numbers = true
+tab-title-length = -1
+file-history-length = 0
+hyper-link-prefix = ""

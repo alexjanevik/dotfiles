@@ -23,6 +23,8 @@ return {
 				"stylua",
 				"clang-format",
 				"markdownlint",
+				"ruff",
+				"tombo",
 			},
 			auto_update = false,
 			run_on_start = true,

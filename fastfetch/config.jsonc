@@ -1,40 +1,65 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "type": "small"
+    "source": "$HOME/.config/fastfetch/img/cat.txt",
+    "type": "file"
   },
   "display": {
-    "separator": "  ",
+    "separator": "",
     "color": {
-      "keys": "magenta"
+      "keys": "cyan"
     },
     "size": {
       "ndigits": 0,
       "maxPrefix": "MB"
     },
     "key": {
-      "type": "icon"
+      "type": "icon",
+      "width": 4
+    },
+    "percent": {
+      "type": [
+        "bar",
+        "bar-monochrome",
+        "num",
+        "num-color",
+        "hide-others"
+      ]
     }
   },
   "modules": [
+    "break",
     {
       "type": "title",
       "color": {
-        "user": "green",
-        "at": "red",
-        "host": "blue"
+        "user": "yellow",
+        "at": "light_black",
+        "host": "red"
       },
-      "format": "{user-name-colored} {at-symbol-colored} {host-name-colored}"
+      "format": "{user-name-colored} {at-symbol-colored} {host-name-colored}",
+      "keyIcon": " "
     },
-    "os",
-    "kernel",
-    "memory",
-    "packages",
-    "uptime",
     {
-      "type": "colors",
-      "key": "Colors",
-      "symbol": "circle"
+      "type": "separator",
+      "string": "·",
+      "times": 27,
+      "outputColor": "light_black"
+    },
+    {
+      "type": "os",
+      "format": "{name} {codename} {version}",
+      "keyIcon": " "
+    },
+    "shell",
+    "memory",
+    {
+      "type": "packages",
+      "format": "{brew} formulae, {brew-cask} casks",
+      "keyIcon": " "
+    },
+    {
+      "type": "uptime",
+      "keyIcon": " "
     }
   ]
 }

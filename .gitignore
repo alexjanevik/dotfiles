@@ -2,7 +2,6 @@
 
 # Files to not ignore
 !/.gitignore
-!/.zshrc
 !/README.md
 
 # Folder to not ignore
@@ -12,6 +11,8 @@
 !/ghostty
 !/skhd
 !/fastfetch
+!/leaf
+!/starship
 
 **/.DS_Store
 */.gitconfig

@@ -1,9 +1,7 @@
 # window options
 
-#theme = TokyoNight
 theme = Gruvbox Material Dark
 font-family = "JetBrainsMono Nerd Font"
-# font-family = CaskaydiaMono Nerd Font
 font-size = 12
 background-opacity = 0.95
 background-blur = 20 
@@ -14,9 +12,9 @@ window-width = 80
 macos-titlebar-style = hidden
 
 # cmd+enter for nvim copilot autocomplete
-
 keybind = cmd+enter=text:\xaa
-term = xterm-256color
+#term = xterm-256color
+term = xterm-ghostty
 
 macos-icon = custom-style
 macos-icon-frame = plastic

@@ -46,9 +46,10 @@ alt - f: yabai -m window --toggle float
 
 ### application shortcuts
 # terminal
-alt - t: /Applications/Ghostty.app/Contents/MacOS/ghostty
+alt - t: osascript -e 'tell application "Ghostty"' -e 'if it is running then' -e 'tell application "Ghostty" to new window' -e 'else' -e 'activate' -e 'end if' -e 'end tell'
 # run 'btop' in terminal
-alt - a: /Applications/Ghostty.app/Contents/MacOS/ghostty start -- btop
+alt - a: osascript -e 'tell application "Ghostty"' -e 'if it is running then' -e 'tell application "System Events" to tell process "Ghostty" to click menu item "New Window" of menu "File" of menu bar 1' -e 'delay 0.1' -e 'tell application "System Events" to keystroke "/opt/homebrew/bin/btop" & return' -e 'else' -e 'activate' -e 'delay 0.1' -e 'tell application "System Events" to keystroke "/opt/homebrew/bin/btop" & return' -e 'end if' -e 'end tell'
+
 # browser
 alt - b: /Applications/Firefox.app/Contents/MacOS/firefox
 # finder

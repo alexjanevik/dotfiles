@@ -1,7 +1,12 @@
-# config files 👽
-### my dotfiles n configs n things!
+# alexjanevik/dotfiles
 
-- ghostty 
+## my dotfiles n configs n things
+
+- ghostty
 - zsh
+  - fastfetch
+  - starship
 - neovim
 - yabai
+- skhd
+- leaf

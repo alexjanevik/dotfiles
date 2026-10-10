@@ -1,47 +1,55 @@
-#if [ "$TMUX" = "" ]; then tmux; fi
-fastfetch
-echo "\n"
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# tool paths
+typeset -U path
+path=("$HOME/.local/bin" "${ASDF_DATA_DIR:-$HOME/.asdf}/shims" $path "$HOME/.lsp/bin")
+export VCPKG_ROOT="$HOME/vcpkg"
+
+# shared history
+HISTFILE="$HOME/.zhistory"
+HISTSIZE=50000
+SAVEHIST=10000
+setopt extended_history share_history hist_expire_dups_first
+setopt hist_ignore_dups hist_ignore_space hist_verify
+
+# zsh tab completion, homebrew completions
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# search history
+bindkey -e
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+# directory navigation and aliases
+eval "$(zoxide init zsh)"
+alias cd='z'
+alias ls='eza --icons=always --grid'
+alias lg='lazygit'
+
+# fastfetch + starship
+if (( $+commands[fastfetch] )); then
+  fastfetch
+  print
 fi
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+# keep newline between prompts but prevent extra newline when clearing the screen
+# https://www.reddit.com/r/commandline/comments/13r2ou3/is_there_any_way_to_remove_the_first_newline_from/
+PROMPT_NEEDS_NEWLINE=false
+precmd() {
+  if [[ "$PROMPT_NEEDS_NEWLINE" == true ]]; then
+    echo
+  fi
+  PROMPT_NEEDS_NEWLINE=true
+}
+clear() {
+  PROMPT_NEEDS_NEWLINE=false
+  command clear
+}
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# history setup
-HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
-setopt share_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_verify
-
-bindkey "^[[A" history-search-backward
-bindkey "^[[B" history-search-forward
-
+# zsh plugins
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# ---- Eza (better ls) ----
-alias ls="eza --icons=always --grid"
-
-# ---- Zoxide (better cd) ----
-eval "$(zoxide init zsh)"
-alias cd="z"
-
-alias lg="lazygit"
-alias vim="nvim"
-
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
-[ -f "/Users/alexjanevik/.ghcup/env" ] && . "/Users/alexjanevik/.ghcup/env" # ghcup-env
-
-export PATH=$PATH:$HOME/.lsp/bin
-
-export PATH="$HOME/.local/bin:$PATH"

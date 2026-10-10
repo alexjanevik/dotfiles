@@ -24,6 +24,7 @@ return {
 				cpp = { "clang-format" },
 				frag = { "clang-format" },
 				vert = { "clang-format" },
+				toml = { "tombi" },
 			},
 			format_on_save = {
 				lsp_format = "fallback",
