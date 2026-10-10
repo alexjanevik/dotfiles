@@ -140,8 +140,6 @@ symbol = " "
 
 [cpp]
 disabled = false
-detect_extensions = ["cpp", "cc", "cxx", "hpp", "hxx"]
-detect_files = ["CMakeLists.txt", "Makefile"]
 format = "with [$symbol($version(-$name))]($style) "
 symbol = " "
 

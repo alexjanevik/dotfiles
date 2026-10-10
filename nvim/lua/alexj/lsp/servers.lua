@@ -10,7 +10,7 @@ return {
 	prismals = {},
 	pyright = {},
 	clangd = {},
-	cmake = {},
+	neocmake = {},
 	rust_analyzer = {},
 	sqlls = {},
 	jdtls = {},
