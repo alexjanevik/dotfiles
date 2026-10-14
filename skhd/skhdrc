@@ -42,7 +42,7 @@ alt + shift - y: yabai -m space --rotate 270
 alt + shift - t: yabai -m space --rotate 90
 
 # floating windows
-alt - f: yabai -m window --toggle float
+alt + shift - f: yabai -m window --toggle float
 
 ### application shortcuts
 # terminal

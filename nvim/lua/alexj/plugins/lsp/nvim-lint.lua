@@ -4,9 +4,9 @@ return {
 	config = function()
 		local lint = require("lint")
 
-		lint.linters_by_ft = {
-			markdown = { "markdownlint" },
-		}
+		-- Markdown diagnostics come from the rumdl LSP; registering it here
+		-- would publish the same diagnostics a second time.
+		lint.linters_by_ft = {}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
@@ -15,13 +15,6 @@ return {
 			callback = function()
 				lint.try_lint()
 			end,
-		})
-
-		-- disable MD013 (line length) for markdownlint
-		local markdownlint = lint.linters.markdownlint
-		markdownlint.args = vim.list_extend(markdownlint.args or {}, {
-			"--disable",
-			"MD013",
 		})
 	end,
 }

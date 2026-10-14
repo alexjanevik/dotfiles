@@ -12,7 +12,7 @@ return {
 			trash = true,
 		},
 		picker = {
-			ui_select = false, -- Keep FzfLua as the vim.ui.select backend.
+			--ui_select = false, -- Keep FzfLua as the vim.ui.select backend.
 			hidden = true,
 			ignored = true,
 		},

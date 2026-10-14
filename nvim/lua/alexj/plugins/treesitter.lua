@@ -41,13 +41,6 @@ return {
 	},
 
 	config = function()
-		vim.filetype.add({
-			extension = {
-				frag = "glsl",
-				vert = "glsl",
-			},
-		})
-
 		local treesitter = require("nvim-treesitter")
 
 		treesitter.setup({})

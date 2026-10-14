@@ -13,6 +13,9 @@ return {
 				},
 			},
 			panel = { enabled = false },
+			filetypes = {
+				markdown = true,
+			},
 		},
 		config = function(_, opts)
 			require("copilot").setup(opts)
