@@ -23,3 +23,5 @@ WRN 2026-10-14T12:07:16.308 ?.67991    server_start:197: Failed to start server:
 WRN 2026-10-14T12:08:35.319 ?.68520    server_start:197: Failed to start server: operation not permitted: /var/folders/gg/nmln8y7503n0x60cm81840_m0000gn/T/nvim.alexjanevik/Um3meg/nvim.68520.0
 WRN 2026-10-14T12:12:05.700 ?.69118    server_start:197: Failed to start server: operation not permitted: /var/folders/gg/nmln8y7503n0x60cm81840_m0000gn/T/nvim.alexjanevik/gD3Z7W/nvim.69118.0
 WRN 2026-10-14T12:12:11.905 ?.69126    server_start:197: Failed to start server: operation not permitted: /var/folders/gg/nmln8y7503n0x60cm81840_m0000gn/T/nvim.alexjanevik/v41HPV/nvim.69126.0
+WRN 2026-10-14T14:03:06.513 ?.93058    server_start:197: Failed to start server: operation not permitted: /var/folders/gg/nmln8y7503n0x60cm81840_m0000gn/T/nvim.alexjanevik/r8Nz4G/nvim.93058.0
+WRN 2026-10-14T14:34:19.151 ?.15387    server_start:197: Failed to start server: operation not permitted: /var/folders/gg/nmln8y7503n0x60cm81840_m0000gn/T/nvim.alexjanevik/dkjjSg/nvim.15387.0

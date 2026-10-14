@@ -45,7 +45,7 @@ return {
 				{
 					"<leader>e",
 					function()
-						Snacks.explorer()
+						require("snacks").explorer()
 					end,
 					desc = "Explorer",
 					icon = "󰙅 ",
@@ -53,7 +53,7 @@ return {
 				{
 					"<leader>n",
 					function()
-						Snacks.picker.notifications()
+						require("snacks").picker.notifications()
 					end,
 					desc = "Notifications",
 					icon = " ",
@@ -127,7 +127,7 @@ return {
 				{
 					"<leader>lg",
 					function()
-						Snacks.lazygit()
+						require("snacks").lazygit()
 					end,
 					desc = "Lazygit",
 					icon = " ",
