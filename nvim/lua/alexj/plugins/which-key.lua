@@ -104,9 +104,9 @@ return {
 
 			-- LSP
 			{
-				{ "<leader>l", group = "LSP", icon = " " },
+				{ "<leader>g", group = "LSP", icon = " " },
 				{
-					"<leader>ld",
+					"<leader>gd",
 					function()
 						require("snacks").picker.lsp_definitions()
 					end,
@@ -114,7 +114,7 @@ return {
 					icon = " ",
 				},
 				{
-					"<leader>lr",
+					"<leader>gr",
 					function()
 						require("snacks").picker.lsp_references()
 					end,
@@ -122,7 +122,7 @@ return {
 					icon = " ",
 				},
 				{
-					"<leader>li",
+					"<leader>gi",
 					function()
 						require("snacks").picker.lsp_implementations()
 					end,
@@ -130,7 +130,7 @@ return {
 					icon = "󰆧 ",
 				},
 				{
-					"<leader>ln",
+					"<leader>gn",
 					function()
 						vim.lsp.buf.rename()
 					end,
@@ -138,14 +138,14 @@ return {
 					icon = " ",
 				},
 				{
-					"<leader>la",
+					"<leader>ga",
 					"<cmd>lua vim.lsp.buf.code_action()<cr>",
 					desc = "Code action",
 					icon = " ",
 				},
-				{ "<leader>ls", group = "Symbols", icon = "󰊕 " },
+				{ "<leader>gs", group = "Symbols", icon = "󰊕 " },
 				{
-					"<leader>lss",
+					"<leader>gss",
 					function()
 						require("snacks").picker.lsp_symbols()
 					end,
@@ -153,7 +153,7 @@ return {
 					icon = "󰊕 ",
 				},
 				{
-					"<leader>lsw",
+					"<leader>gsw",
 					function()
 						require("snacks").picker.lsp_workspace_symbols()
 					end,
@@ -183,9 +183,9 @@ return {
 
 			-- Git
 			{
-				{ "<leader>g", group = "Git", icon = " " },
+				{ "<leader>l", group = "Git", icon = " " },
 				{
-					"<leader>glg",
+					"<leader>lg",
 					function()
 						require("snacks").lazygit()
 					end,
@@ -193,7 +193,7 @@ return {
 					icon = " ",
 				},
 				{
-					"<leader>gc",
+					"<leader>lc",
 					function()
 						require("snacks").picker.git_log()
 					end,
@@ -201,7 +201,7 @@ return {
 					icon = " ",
 				},
 				{
-					"<leader>gb",
+					"<leader>lb",
 					function()
 						require("snacks").picker.git_branches()
 					end,
@@ -209,7 +209,7 @@ return {
 					icon = " ",
 				},
 				{
-					"<leader>gs",
+					"<leader>ls",
 					function()
 						require("snacks").picker.git_status()
 					end,
@@ -217,7 +217,7 @@ return {
 					icon = "󱖫 ",
 				},
 				{
-					"<leader>gx",
+					"<leader>lx",
 					function()
 						require("snacks").picker.git_stash()
 					end,
@@ -225,7 +225,7 @@ return {
 					icon = " ",
 				},
 				{
-					"<leader>gd",
+					"<leader>ld",
 					function()
 						require("snacks").picker.git_diff()
 					end,
@@ -233,7 +233,7 @@ return {
 					icon = " ",
 				},
 				{
-					"<leader>gll",
+					"<leader>ll",
 					function()
 						require("snacks").picker.git_log()
 					end,
