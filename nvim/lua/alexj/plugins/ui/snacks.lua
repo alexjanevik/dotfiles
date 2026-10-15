@@ -21,12 +21,25 @@ return {
 					style = "syntax",
 				},
 			},
+			win = {
+				list = {
+					wo = {
+						wrap = true,
+					},
+				},
+			},
 			sources = {
 				explorer = {
 					layout = {
-						preset = "default",
+						preset = function()
+							return vim.o.columns >= 120 and "default" or "vertical"
+						end,
 						preview = true,
 					},
+				},
+				files = {
+					hidden = true,
+					ignored = true,
 				},
 			},
 		},

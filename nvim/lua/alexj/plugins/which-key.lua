@@ -14,10 +14,17 @@ return {
 		spec = {
 			-- Buffers
 			{
-				{ "<leader>t", group = "Buffers", icon = "󰓩 " },
+				{ "<leader>t", group = "Buffers", icon = " " },
 				{ "<leader>th", "<plug>(cokeline-focus-prev)", desc = "Focus previous buffer", icon = " " },
 				{ "<leader>tl", "<plug>(cokeline-focus-next)", desc = "Focus next buffer", icon = " " },
-				{ "<leader>tw", "<cmd>bdelete<cr>", desc = "Close current buffer", icon = "󰭌 " },
+				{
+					"<leader>tw",
+					function()
+						Snacks.bufdelete.delete()
+					end,
+					desc = "Close current buffer",
+					icon = "󰭌 ",
+				},
 				{ "<leader>t#", desc = "Focus buffer 1-9", icon = "󱦞 " },
 				{ -- Focus buffer 1-9
 					{ "<leader>t1", "<plug>(cokeline-focus-1)", hidden = true },
@@ -32,62 +39,98 @@ return {
 				},
 			},
 
-			-- Fuzzy Find
+			-- Find
 			{
-				{ "<leader>f", group = "Fuzzy Find", icon = "󰮗 " },
-				{ "<leader>ff", '<cmd>lua require("snacks").picker.files()<cr>', desc = "Find Files", icon = "󰤏 " },
-				{ "<leader>fg", '<cmd>lua require("snacks").picker.grep()<cr>', desc = "Live Grep", icon = "󱩾 " },
+				{ "<leader>f", group = "Find", icon = "󰮗 " },
+				{
+					"<leader>ff",
+					function()
+						require("snacks").picker.files()
+					end,
+					desc = "Files",
+					icon = "󰤏 ",
+				},
+				{
+					"<leader>fg",
+					function()
+						require("snacks").picker.grep()
+					end,
+					desc = "Grep",
+					icon = "󱩾 ",
+				},
 				{
 					"<leader>fh",
-					'<cmd>lua require("snacks").picker.pickers()<cr>',
-					desc = "Picker Menu",
+					function()
+						require("snacks").picker.pickers()
+					end,
+					desc = "Pickers",
 					icon = "󰮫 ",
+				},
+				{
+					"<leader>fb",
+					function()
+						require("snacks").picker.buffers()
+					end,
+					desc = "Buffers",
+					icon = " ",
+				},
+				{
+					"<leader>fr",
+					function()
+						require("snacks").picker.recent()
+					end,
+					desc = "Recent",
+					icon = "󰋚 ",
 				},
 			},
 
 			-- Snacks
 			{
-				{
-					"<leader>e",
-					function()
-						require("snacks").explorer()
-					end,
-					desc = "Explorer",
-					icon = "󰙅 ",
-				},
-				{
-					"<leader>n",
-					function()
-						require("snacks").picker.notifications()
-					end,
-					desc = "Notifications",
-					icon = " ",
-				},
+				"<leader>e",
+				function()
+					require("snacks").explorer()
+				end,
+				desc = "Explorer",
+				icon = "󰙅 ",
+			},
+			{
+				"<leader>n",
+				function()
+					require("snacks").picker.notifications()
+				end,
+				desc = "Notifications",
+				icon = " ",
 			},
 
 			-- LSP
 			{
-				{ "<leader>g", group = "LSP", icon = " " },
+				{ "<leader>l", group = "LSP", icon = " " },
 				{
-					"<leader>gd",
-					'<cmd>lua require("snacks").picker.lsp_definitions()<cr>',
+					"<leader>ld",
+					function()
+						require("snacks").picker.lsp_definitions()
+					end,
 					desc = "Go to definition",
 					icon = " ",
 				},
 				{
-					"<leader>gr",
-					'<cmd>lua require("snacks").picker.lsp_references()<cr>',
+					"<leader>lr",
+					function()
+						require("snacks").picker.lsp_references()
+					end,
 					desc = "References",
 					icon = " ",
 				},
 				{
-					"<leader>gi",
-					'<cmd>lua require("snacks").picker.lsp_implementations()<cr>',
+					"<leader>li",
+					function()
+						require("snacks").picker.lsp_implementations()
+					end,
 					desc = "Implementations",
 					icon = "󰆧 ",
 				},
 				{
-					"<leader>gn",
+					"<leader>ln",
 					function()
 						vim.lsp.buf.rename()
 					end,
@@ -95,19 +138,27 @@ return {
 					icon = " ",
 				},
 				{
-					"<leader>gf",
-					function()
-						require("conform").format({ lsp_format = "fallback", async = false, timeout_ms = 1000 })
-					end,
-					mode = { "n", "v" },
-					desc = "Format file",
-					icon = "󰴑 ",
-				},
-				{
-					"<leader>ga",
+					"<leader>la",
 					"<cmd>lua vim.lsp.buf.code_action()<cr>",
 					desc = "Code action",
 					icon = " ",
+				},
+				{ "<leader>ls", group = "Symbols", icon = "󰊕 " },
+				{
+					"<leader>lss",
+					function()
+						require("snacks").picker.lsp_symbols()
+					end,
+					desc = "Document symbols",
+					icon = "󰊕 ",
+				},
+				{
+					"<leader>lsw",
+					function()
+						require("snacks").picker.lsp_workspace_symbols()
+					end,
+					desc = "Workspace symbols",
+					icon = "󰊕 ",
 				},
 			},
 
@@ -116,21 +167,25 @@ return {
 				{ "<leader>x", group = "Diagnostics", icon = "󰒡 " },
 				{
 					"<leader>xw",
-					'<cmd>lua require("snacks").picker.diagnostics()<cr>',
+					function()
+						require("snacks").picker.diagnostics()
+					end,
 					desc = "Diagnostics (Workspace)",
 				},
 				{
 					"<leader>xx",
-					'<cmd>lua require("snacks").picker.diagnostics_buffer()<cr>',
+					function()
+						require("snacks").picker.diagnostics_buffer()
+					end,
 					desc = "Diagnostics (Document)",
 				},
 			},
 
 			-- Git
 			{
-				{ "<leader>l", group = "Git", icon = " " },
+				{ "<leader>g", group = "Git", icon = " " },
 				{
-					"<leader>lg",
+					"<leader>glg",
 					function()
 						require("snacks").lazygit()
 					end,
@@ -138,30 +193,53 @@ return {
 					icon = " ",
 				},
 				{
-					"<leader>lc",
-					'<cmd>lua require("snacks").picker.git_log()<cr>',
+					"<leader>gc",
+					function()
+						require("snacks").picker.git_log()
+					end,
 					desc = "Git commits",
 					icon = " ",
 				},
 				{
-					"<leader>lb",
-					'<cmd>lua require("snacks").picker.git_branches()<cr>',
+					"<leader>gb",
+					function()
+						require("snacks").picker.git_branches()
+					end,
 					desc = "Git branches",
 					icon = " ",
 				},
 				{
-					"<leader>ls",
-					'<cmd>lua require("snacks").picker.git_status()<cr>',
+					"<leader>gs",
+					function()
+						require("snacks").picker.git_status()
+					end,
 					desc = "Git status",
 					icon = "󱖫 ",
 				},
 				{
-					"<leader>lt",
-					'<cmd>lua require("snacks").picker.git_stash()<cr>',
+					"<leader>gx",
+					function()
+						require("snacks").picker.git_stash()
+					end,
 					desc = "Git stash",
 					icon = " ",
 				},
-				{ "<leader>ld", '<cmd>lua require("snacks").picker.git_diff()<cr>', desc = "Git diff", icon = " " },
+				{
+					"<leader>gd",
+					function()
+						require("snacks").picker.git_diff()
+					end,
+					desc = "Git diff",
+					icon = " ",
+				},
+				{
+					"<leader>gll",
+					function()
+						require("snacks").picker.git_log()
+					end,
+					desc = "Git log",
+					icon = " ",
+				},
 			},
 		},
 	},
