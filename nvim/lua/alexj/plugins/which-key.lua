@@ -35,9 +35,14 @@ return {
 			-- Fuzzy Find
 			{
 				{ "<leader>f", group = "Fuzzy Find", icon = "󰮗 " },
-				{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Find Files", icon = "󰤏 " },
-				{ "<leader>fg", "<cmd>FzfLua live_grep<cr>", desc = "Live Grep", icon = "󱩾 " },
-				{ "<leader>fh", "<cmd>FzfLua<cr>", desc = "FzfLua Menu", icon = "󰮫 " },
+				{ "<leader>ff", '<cmd>lua require("snacks").picker.files()<cr>', desc = "Find Files", icon = "󰤏 " },
+				{ "<leader>fg", '<cmd>lua require("snacks").picker.grep()<cr>', desc = "Live Grep", icon = "󱩾 " },
+				{
+					"<leader>fh",
+					'<cmd>lua require("snacks").picker.pickers()<cr>',
+					desc = "Picker Menu",
+					icon = "󰮫 ",
+				},
 			},
 
 			-- Snacks
@@ -65,19 +70,19 @@ return {
 				{ "<leader>g", group = "LSP", icon = " " },
 				{
 					"<leader>gd",
-					"<cmd>FzfLua lsp_definitions<cr>",
+					'<cmd>lua require("snacks").picker.lsp_definitions()<cr>',
 					desc = "Go to definition",
 					icon = " ",
 				},
 				{
 					"<leader>gr",
-					"<cmd>FzfLua lsp_references<cr>",
+					'<cmd>lua require("snacks").picker.lsp_references()<cr>',
 					desc = "References",
 					icon = " ",
 				},
 				{
 					"<leader>gi",
-					"<cmd>FzfLua lsp_implementations<cr>",
+					'<cmd>lua require("snacks").picker.lsp_implementations()<cr>',
 					desc = "Implementations",
 					icon = "󰆧 ",
 				},
@@ -100,7 +105,7 @@ return {
 				},
 				{
 					"<leader>ga",
-					"<cmd>FzfLua lsp_code_actions<cr>",
+					"<cmd>lua vim.lsp.buf.code_action()<cr>",
 					desc = "Code action",
 					icon = " ",
 				},
@@ -111,12 +116,12 @@ return {
 				{ "<leader>x", group = "Diagnostics", icon = "󰒡 " },
 				{
 					"<leader>xw",
-					"<cmd>FzfLua diagnostics_workspace<cr>",
+					'<cmd>lua require("snacks").picker.diagnostics()<cr>',
 					desc = "Diagnostics (Workspace)",
 				},
 				{
 					"<leader>xx",
-					"<cmd>FzfLua diagnostics_document<cr>",
+					'<cmd>lua require("snacks").picker.diagnostics_buffer()<cr>',
 					desc = "Diagnostics (Document)",
 				},
 			},
@@ -132,11 +137,31 @@ return {
 					desc = "Lazygit",
 					icon = " ",
 				},
-				{ "<leader>lc", "<cmd>FzfLua git_commits<cr>", desc = "Git commits", icon = " " },
-				{ "<leader>lb", "<cmd>FzfLua git_branches<cr>", desc = "Git branches", icon = " " },
-				{ "<leader>ls", "<cmd>FzfLua git_status<cr>", desc = "Git status", icon = "󱖫 " },
-				{ "<leader>lt", "<cmd>FzfLua git_stash<cr>", desc = "Git stash", icon = " " },
-				{ "<leader>ld", "<cmd>FzfLua git_diff<cr>", desc = "Git diff", icon = " " },
+				{
+					"<leader>lc",
+					'<cmd>lua require("snacks").picker.git_log()<cr>',
+					desc = "Git commits",
+					icon = " ",
+				},
+				{
+					"<leader>lb",
+					'<cmd>lua require("snacks").picker.git_branches()<cr>',
+					desc = "Git branches",
+					icon = " ",
+				},
+				{
+					"<leader>ls",
+					'<cmd>lua require("snacks").picker.git_status()<cr>',
+					desc = "Git status",
+					icon = "󱖫 ",
+				},
+				{
+					"<leader>lt",
+					'<cmd>lua require("snacks").picker.git_stash()<cr>',
+					desc = "Git stash",
+					icon = " ",
+				},
+				{ "<leader>ld", '<cmd>lua require("snacks").picker.git_diff()<cr>', desc = "Git diff", icon = " " },
 			},
 		},
 	},

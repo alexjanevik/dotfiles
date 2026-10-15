@@ -12,13 +12,20 @@ return {
 			trash = true,
 		},
 		picker = {
+			enabled = true,
+			ui_select = true,
 			hidden = true,
 			ignored = true,
+			previewers = {
+				diff = {
+					style = "syntax",
+				},
+			},
 			sources = {
 				explorer = {
 					layout = {
 						preset = "default",
-						auto_hide = { "input" },
+						preview = true,
 					},
 				},
 			},
