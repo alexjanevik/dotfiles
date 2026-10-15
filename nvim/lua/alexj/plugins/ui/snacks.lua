@@ -14,6 +14,14 @@ return {
 		picker = {
 			hidden = true,
 			ignored = true,
+			sources = {
+				explorer = {
+					layout = {
+						preset = "default",
+						auto_hide = { "input" },
+					},
+				},
+			},
 		},
 		lazygit = { enabled = true },
 		indent = { enabled = true },
