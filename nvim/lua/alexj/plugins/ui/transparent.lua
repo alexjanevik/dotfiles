@@ -13,6 +13,9 @@ return {
 				"FloatFooter",
 				"WinSeparator",
 			},
+			exclude_groups = {
+				"CursorLine",
+			},
 		})
 	end,
 }
