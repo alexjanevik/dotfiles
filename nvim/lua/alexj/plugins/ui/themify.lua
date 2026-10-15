@@ -13,7 +13,7 @@ return {
 				"sainnhe/gruvbox-material",
 				before = function()
 					vim.g.gruvbox_material_background = "medium"
-					vim.g.gruvbox_material_foreground = "mix"
+					--vim.g.gruvbox_material_foreground = "mix"
 					vim.g.gruvbox_material_transparent_background = 2
 					vim.g.gruvbox_material_dim_inactive_windows = 0
 				end,

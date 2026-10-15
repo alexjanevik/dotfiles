@@ -7,6 +7,8 @@ local opt = vim.opt
 
 -- ## Options
 
+vim.cmd("set noswapfile")
+
 -- ### wrapping
 opt.wrap = true
 opt.linebreak = true

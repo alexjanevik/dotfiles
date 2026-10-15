@@ -83,7 +83,7 @@ use_12hr = true
 read_only = ""
 truncation_length = 3
 truncate_to_repo = true
-style = "cyan"
+style = "bright-blue"
 # fish_style_pwd_dir_length = 1
 
 [jobs]
@@ -92,7 +92,7 @@ style = "bold yellow"
 
 [git_branch]
 symbol = " "
-style = "bold purple"
+style = "bold green"
 
 [git_state]
 merge = " MERGE"
