@@ -1,11 +1,11 @@
-### yabai shortcuts
-# space managerment
+# yabai shortcuts
+## space managerment
 alt - n: yabai -m space --create && yabai -m space --focus last
 alt - w: yabai -m space --destroy
 alt + cmd - h: yabai -m space --focus prev || yabai -m space --focus last
 alt + cmd - l: yabai -m space --focus next || yabai -m space --focus first
 
-# focus spaces
+## focus spaces
 alt - 1: yabai -m space --focus 1
 alt - 2: yabai -m space --focus 2
 alt - 3: yabai -m space --focus 3
@@ -13,7 +13,7 @@ alt - 4: yabai -m space --focus 4
 alt - 5: yabai -m space --focus 5
 alt - 6: yabai -m space --focus 6
 
-# move windows to spaces
+## move windows to spaces
 alt + shift - 1: yabai -m window --space 1 --focus
 alt + shift - 2: yabai -m window --space 2 --focus
 alt + shift - 3: yabai -m window --space 3 --focus
@@ -21,40 +21,50 @@ alt + shift - 4: yabai -m window --space 4 --focus
 alt + shift - 5: yabai -m window --space 5 --focus
 alt + shift - 6: yabai -m window --space 6 --focus
 
-# focus windows
+## focus windows
 alt - h: yabai -m window --focus west
 alt - j: yabai -m window --focus south
 alt - k: yabai -m window --focus north
 alt - l: yabai -m window --focus east
 
-# swap windows
+## swap windows
 alt + shift - h: yabai -m window --swap west
 alt + shift - j: yabai -m window --swap south
 alt + shift - k: yabai -m window --swap north
 alt + shift - l: yabai -m window --swap east
 
-# scale windows
-alt + cmd - r: yabai -m space --balance
-alt + cmd - c: yabai -m window --ratio abs:0.68
-
-# rotate windows
+## rotate windows
 alt + shift - y: yabai -m space --rotate 270
 alt + shift - t: yabai -m space --rotate 90
 
-# floating windows
+## floating windows
 alt + shift - f: yabai -m window --toggle float
 
-### application shortcuts
-# terminal
-alt - t: osascript -e 'tell application "Ghostty"' -e 'if it is running then' -e 'tell application "Ghostty" to new window' -e 'else' -e 'activate' -e 'end if' -e 'end tell'
-# run 'btop' in terminal
-alt - a: osascript -e 'tell application "Ghostty"' -e 'if it is running then' -e 'tell application "System Events" to tell process "Ghostty" to click menu item "New Window" of menu "File" of menu bar 1' -e 'delay 0.1' -e 'tell application "System Events" to keystroke "/opt/homebrew/bin/btop" & return' -e 'else' -e 'activate' -e 'delay 0.1' -e 'tell application "System Events" to keystroke "/opt/homebrew/bin/btop" & return' -e 'end if' -e 'end tell'
+## layouts
+  ### 70/30
+  alt + cmd - c: yabai -m window --ratio abs:0.70
 
-# browser
-alt - b: /Applications/Firefox.app/Contents/MacOS/firefox
-# finder
-alt - e: open -R $HOME'/Applications/'
-# vscode
-alt - c: /Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron
-# outlook
-alt - m: /Applications/Microsoft\ Outlook.app/Contents/MacOS/Microsoft\ Outlook
+  ### reset 
+  alt + cmd - v: yabai -m space --balance
+
+  ### 30/70
+  alt + cmd - b: yabai -m window --ratio abs:0.30
+
+## application shortcuts
+  ### terminal
+  alt - t: osascript -e 'tell application "Ghostty"' -e 'if it is running then' -e 'tell application "Ghostty" to new window' -e 'else' -e 'activate' -e 'end if' -e 'end tell'
+
+  ### run 'btop' in terminal
+  alt - a: osascript -e 'tell application "Ghostty"' -e 'if it is running then' -e 'tell application "System Events" to tell process "Ghostty" to click menu item "New Window" of menu "File" of menu bar 1' -e 'delay 0.1' -e 'tell application "System Events" to keystroke "/opt/homebrew/bin/btop" & return' -e 'else' -e 'activate' -e 'delay 0.1' -e 'tell application "System Events" to keystroke "/opt/homebrew/bin/btop" & return' -e 'end if' -e 'end tell'
+
+  ### browser
+  alt - b: /Applications/Firefox.app/Contents/MacOS/firefox
+
+  ### finder
+  alt - e: open -R $HOME'/Applications/'
+
+  ### vscode
+  alt - c: /Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron
+
+  ### outlook
+  alt - m: /Applications/Microsoft\ Outlook.app/Contents/MacOS/Microsoft\ Outlook
