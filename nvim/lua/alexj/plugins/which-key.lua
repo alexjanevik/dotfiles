@@ -14,9 +14,9 @@ return {
 		spec = {
 			-- Buffers
 			{
-				{ "<leader>t", group = "Buffers", icon = " " },
-				{ "<leader>th", "<plug>(cokeline-focus-prev)", desc = "Focus previous buffer", icon = " " },
-				{ "<leader>tl", "<plug>(cokeline-focus-next)", desc = "Focus next buffer", icon = " " },
+				{ "<leader>b", group = "Buffers", icon = " " },
+				{ "<leader>bh", "<plug>(cokeline-focus-prev)", desc = "Focus previous buffer", icon = " " },
+				{ "<leader>bl", "<plug>(cokeline-focus-next)", desc = "Focus next buffer", icon = " " },
 				{
 					"<leader>tw",
 					function()
@@ -27,28 +27,28 @@ return {
 				},
 				{ "<leader>t#", desc = "Focus buffer 1-9", icon = "󱦞 " },
 				{ -- Focus buffer 1-9
-					{ "<leader>t1", "<plug>(cokeline-focus-1)", hidden = true },
-					{ "<leader>t2", "<plug>(cokeline-focus-2)", hidden = true },
-					{ "<leader>t3", "<plug>(cokeline-focus-3)", hidden = true },
-					{ "<leader>t4", "<plug>(cokeline-focus-4)", hidden = true },
-					{ "<leader>t5", "<plug>(cokeline-focus-5)", hidden = true },
-					{ "<leader>t6", "<plug>(cokeline-focus-6)", hidden = true },
-					{ "<leader>t7", "<plug>(cokeline-focus-7)", hidden = true },
-					{ "<leader>t8", "<plug>(cokeline-focus-8)", hidden = true },
-					{ "<leader>t9", "<plug>(cokeline-focus-9)", hidden = true },
+					{ "<leader>b1", "<plug>(cokeline-focus-1)", hidden = true },
+					{ "<leader>b2", "<plug>(cokeline-focus-2)", hidden = true },
+					{ "<leader>b3", "<plug>(cokeline-focus-3)", hidden = true },
+					{ "<leader>b4", "<plug>(cokeline-focus-4)", hidden = true },
+					{ "<leader>b5", "<plug>(cokeline-focus-5)", hidden = true },
+					{ "<leader>b6", "<plug>(cokeline-focus-6)", hidden = true },
+					{ "<leader>b7", "<plug>(cokeline-focus-7)", hidden = true },
+					{ "<leader>b8", "<plug>(cokeline-focus-8)", hidden = true },
+					{ "<leader>b9", "<plug>(cokeline-focus-9)", hidden = true },
 				},
 			},
 
 			-- Find
 			{
-				{ "<leader>f", group = "Find", icon = "󰮗 " },
+				{ "<leader>f", group = "Find", icon = " " },
 				{
 					"<leader>ff",
 					function()
 						require("snacks").picker.files()
 					end,
 					desc = "Files",
-					icon = "󰤏 ",
+					icon = "󰱽 ",
 				},
 				{
 					"<leader>fg",
@@ -56,15 +56,15 @@ return {
 						require("snacks").picker.grep()
 					end,
 					desc = "Grep",
-					icon = "󱩾 ",
+					icon = "󰺯 ",
 				},
 				{
-					"<leader>fh",
+					"<leader>fp",
 					function()
 						require("snacks").picker.pickers()
 					end,
 					desc = "Pickers",
-					icon = "󰮫 ",
+					icon = " ",
 				},
 				{
 					"<leader>fb",
@@ -81,6 +81,14 @@ return {
 					end,
 					desc = "Recent",
 					icon = "󰋚 ",
+				},
+				{
+					"<leader>fs",
+					function()
+						require("snacks").picker.smart()
+					end,
+					desc = "Smart",
+					icon = "󰧑 ",
 				},
 			},
 

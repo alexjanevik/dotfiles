@@ -30,7 +30,7 @@ return {
 							return " " .. "[" .. buffer.index .. "]  "
 						end,
 						fg = function(buffer)
-							return buffer.is_focused and get_hex("Normal", "fg") or get_hex("Comment", "fg")
+							return buffer.is_focused and get_hex("DiagnosticWarn", "fg") or get_hex("Comment", "fg")
 						end,
 						bold = function(buffer)
 							return buffer.is_focused
