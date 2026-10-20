@@ -14,10 +14,11 @@ window-inherit-working-directory = true
 
 # cmd+enter for nvim copilot autocomplete
 keybind = cmd+enter=text:\xaa
-#term = xterm-256color
 term = xterm-ghostty
 
-macos-icon = custom-style
-macos-icon-frame = plastic
-macos-icon-ghost-color = #ffffff
-macos-icon-screen-color = #1a1b26
+#macos-icon = custom-style
+#macos-icon-frame = plastic
+#macos-icon-ghost-color = #ffffff
+#macos-icon-screen-color = #1a1b26
+
+macos-icon = holographic

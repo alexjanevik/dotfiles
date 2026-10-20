@@ -1,6 +1,6 @@
 # leaf configuration file
 
-theme = "./themes/gruvbox-material.toml"
+theme = "./themes/gruvbox-material-hard.toml"
 editor = "nvim"
 # width = terminal width
 watch = true

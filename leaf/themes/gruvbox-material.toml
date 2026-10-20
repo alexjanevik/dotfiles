@@ -1,4 +1,4 @@
-# gruvbox-material.toml
+# gruvbox-material-medium.toml
 base = "ocean"
 syntax = "base16-ocean.dark"
 
