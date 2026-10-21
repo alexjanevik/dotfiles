@@ -33,6 +33,36 @@ return {
 			return mason_count > 0 and (mason_count .. " ") or ""
 		end
 
+		local function markdown_wordcount()
+			-- Only track stats for markdown or text files
+			if vim.bo.filetype ~= "markdown" and vim.bo.filetype ~= "text" then
+				return ""
+			end
+
+			local wc = vim.fn.wordcount()
+
+			-- check if we are in one of the visual modes
+			local mode = vim.fn.mode()
+			if mode == "v" or mode == "V" or mode == "\22" then -- \22 represents Ctrl+V
+				local selected_words = wc.visual_words
+
+				-- When you first press visual mode, visual_words might briefly be nil
+				if selected_words and selected_words > 0 then
+					return tostring(" " .. selected_words)
+				end
+			end
+
+			-- total document word count in normal mode
+			return tostring(" " .. wc.words)
+		end
+
+		require("lualine").setup({
+			sections = {
+				-- Assign the custom component to your section of choice
+				lualine_y = { markdown_wordcount },
+			},
+		})
+
 		lualine.setup({
 			options = {
 				theme = "auto",
@@ -66,19 +96,13 @@ return {
 							vim.cmd("Mason")
 						end,
 					},
-					{ "fileformat", fmt = string.upper, cond = wide },
+
+					--{ "fileformat", fmt = string.upper, cond = wide },
+					--{},
 					"filetype",
 				},
-				lualine_y = { "progress" },
+				lualine_y = { markdown_wordcount, "progress" },
 				lualine_z = { "location" },
-			},
-			inactive_sections = {
-				lualine_a = {},
-				lualine_b = {},
-				lualine_c = { "filename" },
-				lualine_x = { "location" },
-				lualine_y = {},
-				lualine_z = {},
 			},
 		})
 
