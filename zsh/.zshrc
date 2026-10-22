@@ -27,6 +27,7 @@ eval "$(zoxide init zsh)"
 alias cd='z'
 alias ls='eza --icons=always --grid'
 alias lg='lazygit'
+alias reload='clear; source ~/.zshrc'
 
 # fastfetch + starship
 if (( $+commands[fastfetch] )); then

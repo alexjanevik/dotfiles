@@ -30,6 +30,7 @@ return {
 			},
 			sources = {
 				explorer = {
+					auto_close = true,
 					layout = {
 						preset = function()
 							return vim.o.columns >= 120 and "default" or "vertical"
@@ -40,6 +41,25 @@ return {
 				files = {
 					hidden = true,
 					ignored = true,
+					args = {
+						"-E",
+						".venv",
+						"-E",
+						"node_modules",
+						"-E",
+						".git",
+						"-E",
+						"build",
+					},
+				},
+				grep = {
+					hidden = true,
+					ignored = true,
+					args = {
+						"--ignore-case",
+						"--glob",
+						"!{node_modules,.git,.venv,build,dist}/*",
+					},
 				},
 			},
 		},
