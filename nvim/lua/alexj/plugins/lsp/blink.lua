@@ -6,6 +6,9 @@ return {
 		keymap = {
 			preset = "default",
 			["<CR>"] = { "accept", "fallback" },
+			["<C-e>"] = { "hide", "show" },
+			["<C-j>"] = { "select_next", "fallback" },
+			["<C-k>"] = { "select_prev", "fallback" },
 		},
 		completion = {
 			list = { selection = { preselect = false, auto_insert = false } },

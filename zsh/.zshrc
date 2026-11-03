@@ -25,7 +25,10 @@ bindkey '^[[B' history-search-forward
 # directory navigation and aliases
 eval "$(zoxide init zsh)"
 alias cd='z'
-alias ls='eza --icons=always --grid'
+
+export EZA_CONFIG_DIR="$HOME/.config/eza"
+alias ls='eza --icons=always --grid --group-directories-first'
+
 alias lg='lazygit'
 alias reload='clear; source ~/.zshrc'
 

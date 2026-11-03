@@ -15,7 +15,7 @@ return {
 					vim.g.gruvbox_material_background = "hard"
 					vim.g.gruvbox_material_foreground = "material"
 					vim.g.gruvbox_material_transparent_background = 2
-					vim.g.gruvbox_material_dim_inactive_windows = 0
+					vim.g.gruvbox_material_dim_inactive_windows = 1
 				end,
 			},
 			"ellisonleao/gruvbox.nvim",

@@ -9,7 +9,7 @@ return {
 				auto_trigger = true,
 				keymap = {
 					--custom Cmd+Enter
-					accept = "<Char-0xAA>",
+					accept = "<D-CR>",
 				},
 			},
 			panel = { enabled = false },

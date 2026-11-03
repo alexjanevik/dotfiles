@@ -2,7 +2,7 @@
 
 theme = Gruvbox Material Hard 
 font-family = "JetBrainsMono Nerd Font"
-font-size = 12
+font-size = 12 
 #background-opacity = 0.95
 background-blur = 20 
 window-padding-x = 16
@@ -13,8 +13,7 @@ macos-titlebar-style = hidden
 window-inherit-working-directory = true
 
 # cmd+enter for nvim copilot autocomplete
-keybind = cmd+enter=text:\xaa
-term = xterm-ghostty
+keybind = cmd+enter=text:\x1b[13;9u
 
 #macos-icon = custom-style
 #macos-icon-frame = plastic
