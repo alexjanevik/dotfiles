@@ -67,7 +67,7 @@ return {
 		indent = { enabled = true },
 		input = { enabled = true },
 		notifier = { enabled = true },
-		image = { enabled = true },
+		image = { enabled = true, doc = { enabled = false } },
 		scroll = { enabled = true },
 	},
 	init = function()

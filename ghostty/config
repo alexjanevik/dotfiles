@@ -3,21 +3,19 @@
 theme = Gruvbox Material Hard 
 font-family = "JetBrainsMono Nerd Font"
 font-size = 12 
-#background-opacity = 0.95
-background-blur = 20 
+
+background-opacity = 0.92
+background-blur = macos-glass-regular
+
 window-padding-x = 16
 window-padding-y = 16
 window-height = 24
 window-width = 80
 macos-titlebar-style = hidden
 window-inherit-working-directory = true
+drag-handle = never
 
 # cmd+enter for nvim copilot autocomplete
 keybind = cmd+enter=text:\x1b[13;9u
 
-#macos-icon = custom-style
-#macos-icon-frame = plastic
-#macos-icon-ghost-color = #ffffff
-#macos-icon-screen-color = #1a1b26
-
-macos-icon = holographic
+macos-icon = glass 
