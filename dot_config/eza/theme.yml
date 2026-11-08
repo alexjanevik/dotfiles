@@ -2,12 +2,17 @@
 
 filekinds:
   directory:
-      foreground: Blue 
+    foreground: Blue
 
 filenames:
+  "dotfiles":
+    icon:
+      glyph: ""
+      style:
+        foreground: Yellow
   "docs":
-    icon: 
-      glyph: "󱂷" 
+    icon:
+      glyph: "󱂷"
       style:
         foreground: Magenta
   "src":
