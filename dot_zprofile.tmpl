@@ -1,0 +1,12 @@
+{{ if eq .chezmoi.os "darwin" -}}
+eval $(/opt/homebrew/bin/brew shellenv)
+{{- end }}
+
+UNI="$HOME/Documents/Uni"
+DOTFILES="$HOME/dotfiles"
+DEV="$HOME/dev"
+
+export DEV
+export DOTFILES
+export UNI
+export CLICOLOR=1
