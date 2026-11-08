@@ -1,0 +1,68 @@
+{
+  "parser-directories": [
+    "/Users/alexjanevik/github",
+    "/Users/alexjanevik/src",
+    "/Users/alexjanevik/source",
+    "/Users/alexjanevik/projects",
+    "/Users/alexjanevik/dev",
+    "/Users/alexjanevik/git"
+  ],
+  "theme": {
+    "variable": 252,
+    "variable.parameter": {
+      "color": 252,
+      "underline": true
+    },
+    "module": 136,
+    "number": {
+      "color": 94,
+      "bold": true
+    },
+    "property": 124,
+    "string": 28,
+    "string.special": 30,
+    "tag": 18,
+    "punctuation.bracket": 239,
+    "constant": 94,
+    "function": 26,
+    "punctuation.special": 239,
+    "comment": {
+      "color": 245,
+      "italic": true
+    },
+    "operator": {
+      "color": 239,
+      "bold": true
+    },
+    "property.builtin": {
+      "color": 124,
+      "bold": true
+    },
+    "function.builtin": {
+      "bold": true,
+      "color": 26
+    },
+    "punctuation": 239,
+    "punctuation.delimiter": 239,
+    "type.builtin": {
+      "bold": true,
+      "color": 23
+    },
+    "variable.builtin": {
+      "color": 252,
+      "bold": true
+    },
+    "constructor": 136,
+    "embedded": null,
+    "attribute": {
+      "italic": true,
+      "color": 124
+    },
+    "type": 23,
+    "constant.builtin": {
+      "color": 94,
+      "bold": true
+    },
+    "keyword": 56
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "language": "en,en-GB",
+  "languageSettings": [
+    { "ignoreRegExpList": ["markdown-fenced-code"], "languageId": "markdown" }
+  ],
+  "version": "0.2",
+  "patterns": [
+    {
+      "pattern": [
+        "/^([ \\t]*`{3,})[^\\n]*\\n[\\s\\S]*?^\\1`*[ \\t]*$/gm",
+        "/^([ \\t]*~{3,})[^\\n]*\\n[\\s\\S]*?^\\1~*[ \\t]*$/gm"
+      ],
+      "name": "markdown-fenced-code"
+    }
+  ]
+}

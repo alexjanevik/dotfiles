@@ -1,0 +1,6 @@
+[preview]
+max_width = 2400
+max_height = 3600
+
+[mgr]
+ratio = [1, 2, 3]

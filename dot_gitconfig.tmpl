@@ -1,0 +1,13 @@
+
+[user]
+	name = Alex Janevik
+	email = ajanevik@gmail.com
+	username = alexjanevik
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	excludesfile = {{ .chezmoi.homeDir }}/.gitignore_global
