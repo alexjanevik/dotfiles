@@ -11,9 +11,7 @@ setopt extended_history share_history hist_expire_dups_first
 setopt hist_ignore_dups hist_ignore_space hist_verify
 
 # zsh tab completion, homebrew completions
-{{ if eq .chezmoi.os "darwin" -}}
-fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
-{{ end -}}
+[[ -d /opt/homebrew/share/zsh/site-functions ]] && fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
@@ -57,10 +55,8 @@ clear() {
 }
 
 # zsh plugins
-{{ $plugins := "/usr/share" -}}
-{{ if eq .chezmoi.os "darwin" -}}
-{{ $plugins = "/opt/homebrew/share" -}}
-{{ end -}}
-for plugin in zsh-autosuggestions/zsh-autosuggestions.zsh zsh-syntax-highlighting/zsh-syntax-highlighting.zsh; do
-  [[ -r {{ $plugins }}/$plugin ]] && source {{ $plugins }}/$plugin
+for dir in /opt/homebrew/share /usr/share /usr/share/zsh/plugins; do
+  for plugin in zsh-autosuggestions/zsh-autosuggestions.zsh zsh-syntax-highlighting/zsh-syntax-highlighting.zsh; do
+    [[ -r $dir/$plugin ]] && source $dir/$plugin
+  done
 done

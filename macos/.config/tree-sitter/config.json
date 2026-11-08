@@ -1,11 +1,11 @@
 {
   "parser-directories": [
-    "{{ .chezmoi.homeDir }}/github",
-    "{{ .chezmoi.homeDir }}/src",
-    "{{ .chezmoi.homeDir }}/source",
-    "{{ .chezmoi.homeDir }}/projects",
-    "{{ .chezmoi.homeDir }}/dev",
-    "{{ .chezmoi.homeDir }}/git"
+    "/Users/alexjanevik/github",
+    "/Users/alexjanevik/src",
+    "/Users/alexjanevik/source",
+    "/Users/alexjanevik/projects",
+    "/Users/alexjanevik/dev",
+    "/Users/alexjanevik/git"
   ],
   "theme": {
     "variable": 252,

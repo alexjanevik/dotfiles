@@ -1,6 +1,4 @@
-{{ if eq .chezmoi.os "darwin" -}}
-eval $(/opt/homebrew/bin/brew shellenv)
-{{- end }}
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 UNI="$HOME/Documents/Uni"
 DOTFILES="$HOME/dotfiles"

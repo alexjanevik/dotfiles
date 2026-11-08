@@ -1,1 +1,5 @@
 .DS_Store
+*.log
+# yazi: rebuilt with `ya pkg install`
+common/.config/yazi/plugins/
+common/.config/yazi/flavors/
