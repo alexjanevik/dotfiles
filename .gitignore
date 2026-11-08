@@ -1,18 +1,1 @@
-/*
-
-# Files to not ignore
-!/.gitignore
-!/README.md
-
-# Folder to not ignore
-!/zsh
-!/nvim
-!/yabai
-!/ghostty
-!/skhd
-!/fastfetch
-!/eza
-!/starship
-
-**/.DS_Store
-*/.gitconfig
+.DS_Store
