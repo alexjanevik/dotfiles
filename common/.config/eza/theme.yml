@@ -1,15 +1,8 @@
-#  { ".cache", ".config", ".git", ".github", ".local", ".vim", "AppData", "Applications", "Desktop", "Documents", "Downloads", "Favorites", "Library", "Music", "Network", "Pictures", "ProgramData", "Projects", "Public", "System", "Templates", "Trash", "Users", "Videos", "Volumes", "autoload", "bin", "boot", "build", "colors", "compiler", "dev", "doc", "docs", "etc", "ftdetect", "ftplugin", "home", "indent", "keymap", "lang", "lib", "lsp", "lua", "media", "mini.nvim", "mnt", "node_modules", "nvim", "opt", "pack", "parser", "plugin", "proc", "queries", "root", "rplugin", "sbin", "snippets", "spell", "src", "srv", "syntax", "test", "tests", "tmp", "tutor", "usr", "var" }
-
 filekinds:
   directory:
     foreground: Blue
 
 filenames:
-  "dotfiles":
-    icon:
-      glyph: ""
-      style:
-        foreground: Yellow
   "docs":
     icon:
       glyph: "󱂷"
@@ -24,58 +17,18 @@ filenames:
     icon:
       glyph: "󱁿"
       style:
-        foreground: Cyan
-  ".cache":
-    icon:
-      glyph: "󰪺"
-      style:
-        foreground: Cyan
+        foreground: 012
   ".git":
     icon:
-      style:
-        foreground: 012
-  "Applications":
-    icon:
-      glyph: "󱧺"
-      style:
-        foreground: 012
-  "Desktop":
-    icon:
-      glyph: "󱧶"
-      style:
-        foreground: 012
-  "Downloads":
-    icon:
-      glyph: "󰉍"
-      style:
-        foreground: 012
-  "Library":
-    icon:
-      glyph: "󰲂"
-      style:
-        foreground: 012
-  "Music":
-    icon:
-      glyph: "󱍙"
-      style:
-        foreground: 012
-  "Pictures":
-    icon:
-      glyph: "󰉏"
-      style:
-        foreground: 012
-  "Public":
-    icon:
-      glyph: "󱧰"
       style:
         foreground: 012
   "dev":
     icon:
       glyph: "󱧼"
       style:
-        foreground: Yellow
-  "Videos":
+        foreground: 012
+  "dotfiles":
     icon:
-      glyph: "󱞊"
+      glyph: "󱁿"
       style:
         foreground: 012

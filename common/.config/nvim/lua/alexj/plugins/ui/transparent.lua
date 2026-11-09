@@ -14,7 +14,7 @@ return {
 				"WinSeparator",
 			},
 			exclude_groups = {
-				"CursorLine",
+				--"CursorLine",
 			},
 		})
 	end,

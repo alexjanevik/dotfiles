@@ -60,3 +60,6 @@ for dir in /opt/homebrew/share /usr/share /usr/share/zsh/plugins; do
     [[ -r $dir/$plugin ]] && source $dir/$plugin
   done
 done
+
+# Mole shell completion
+if output="$(mole completion zsh 2>/dev/null)"; then eval "$output"; fi

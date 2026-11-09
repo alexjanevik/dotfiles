@@ -92,7 +92,7 @@ style = "bold yellow"
 
 [git_branch]
 symbol = " "
-style = "bold green"
+style = "bold purple"
 
 [git_state]
 merge = " MERGE"
