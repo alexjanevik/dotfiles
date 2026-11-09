@@ -82,15 +82,15 @@ return {
 
 			-- Each severity needs its own component to use a separate colour.
 			for i, diagnostic in ipairs({
-				{ key = "errors", icon = "", hl = "DiagnosticError" },
-				{ key = "warnings", icon = "", hl = "DiagnosticWarn" },
-				{ key = "infos", icon = "", hl = "DiagnosticInfo" },
-				{ key = "hints", icon = "", hl = "DiagnosticHint" },
+				{ key = "errors", icon = "!", hl = "DiagnosticError" },
+				--{ key = "warnings", icon = "", hl = "DiagnosticWarn" },
+				--{ key = "infos", icon = "", hl = "DiagnosticInfo" },
+				--{ key = "hints", icon = "", hl = "DiagnosticHint" },
 			}) do
 				table.insert(opts.components, 4 + i, {
 					text = function(buffer)
 						local count = buffer.diagnostics[diagnostic.key]
-						return count > 0 and (" " .. diagnostic.icon .. " " .. count) or ""
+						return count > 0 and (" " .. diagnostic.icon) or ""
 					end,
 					fg = function()
 						return get_hex(diagnostic.hl, "fg")

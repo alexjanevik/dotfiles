@@ -1,0 +1,22 @@
+background = #{{hex:colors.bg}}
+foreground = #{{hex:colors.fg}}
+cursor-color = #{{hex:colors.cursor}}
+selection-background = #{{hex:colors.selection_bg}}
+selection-foreground = #{{hex:colors.selection_fg}}
+
+palette = 0=#{{hex:colors.ansi0}}
+palette = 1=#{{hex:colors.ansi1}}
+palette = 2=#{{hex:colors.ansi2}}
+palette = 3=#{{hex:colors.ansi3}}
+palette = 4=#{{hex:colors.ansi4}}
+palette = 5=#{{hex:colors.ansi5}}
+palette = 6=#{{hex:colors.ansi6}}
+palette = 7=#{{hex:colors.ansi7}}
+palette = 8=#{{hex:colors.ansi8}}
+palette = 9=#{{hex:colors.ansi9}}
+palette = 10=#{{hex:colors.ansi10}}
+palette = 11=#{{hex:colors.ansi11}}
+palette = 12=#{{hex:colors.ansi12}}
+palette = 13=#{{hex:colors.ansi13}}
+palette = 14=#{{hex:colors.ansi14}}
+palette = 15=#{{hex:colors.ansi15}}

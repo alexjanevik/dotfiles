@@ -1,0 +1,13 @@
+# Template paths are assumed relative to this file's directory (the README's
+# example uses the same form but doesn't say so explicitly).
+# Run: colourme --dry-run gruvbox-material-hard   (preview)
+#      colourme gruvbox-material-hard             (apply)
+
+[ghostty]
+template = "templates/ghostty"
+destination = "~/.config/ghostty/themes/colourme" # then set `theme = colourme` in the Ghostty config
+
+[nvim]
+template = "templates/nvim-palette.lua"
+destination = "~/.config/nvim/lua/alexj/palette.lua" # read by lualine.lua
+# post_hook: not set yet. Neovim needs a file watcher and Ghostty needs a reload trigger.

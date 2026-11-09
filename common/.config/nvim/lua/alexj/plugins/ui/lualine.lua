@@ -6,62 +6,40 @@ return {
 	},
 	config = function()
 		local lualine = require("lualine")
-		local lazy_status = require("lazy.status")
 		local wide = function()
 			return vim.fn.winwidth(0) > 80
 		end
 
-		-- Read Mason's local registry; rendering the statusline never refreshes it.
-		local mason_count, mason_checked = 0, 0
-		local function mason_updates()
-			if os.time() - mason_checked >= 60 then
-				mason_checked = os.time()
-				mason_count = 0
-				local ok, registry = pcall(require, "mason-registry")
-				if ok then
-					for _, package in ipairs(registry.get_installed_packages()) do
-						local success, outdated = pcall(function()
-							local installed = package:get_installed_version()
-							return installed ~= nil and installed ~= package:get_latest_version()
-						end)
-						if success and outdated then
-							mason_count = mason_count + 1
-						end
-					end
+		local colourme = require("alexj.colourme")
+
+		-- The centred box holds LSP names and diagnostics. Its end caps always render (an empty
+		-- component loses its separator), so show the whole box only when it has content.
+		local ignored_lsp = { copilot = true, ["null-ls"] = true }
+		local function box_visible()
+			if #vim.diagnostic.get(0) > 0 then
+				return true
+			end
+			if not wide() then
+				return false
+			end
+			for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
+				if not ignored_lsp[client.name] then
+					return true
 				end
 			end
-			return mason_count > 0 and (mason_count .. " ") or ""
+			return false
 		end
-
-		local function markdown_wordcount()
-			-- Only track stats for markdown or text files
-			if vim.bo.filetype ~= "markdown" and vim.bo.filetype ~= "text" then
-				return ""
-			end
-
-			local wc = vim.fn.wordcount()
-
-			-- check if we are in one of the visual modes
-			local mode = vim.fn.mode()
-			if mode == "v" or mode == "V" or mode == "\22" then -- \22 represents Ctrl+V
-				local selected_words = wc.visual_words
-
-				-- When you first press visual mode, visual_words might briefly be nil
-				if selected_words and selected_words > 0 then
-					return tostring(" " .. selected_words)
-				end
-			end
-
-			-- total document word count in normal mode
-			return tostring(" " .. wc.words)
+		local function end_cap(separator)
+			return {
+				function()
+					return " "
+				end,
+				padding = 0,
+				cond = box_visible,
+				color = colourme.pair(12, "bg"),
+				separator = separator,
+			}
 		end
-
-		require("lualine").setup({
-			sections = {
-				-- Assign the custom component to your section of choice
-				lualine_y = { markdown_wordcount },
-			},
-		})
 
 		lualine.setup({
 			options = {
@@ -71,38 +49,44 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { "branch", { "diff", cond = wide } },
+				lualine_b = { { "branch", icon = "" } },
 				lualine_c = {
 					"filename",
-					"diagnostics",
 					function()
 						local register = vim.fn.reg_recording()
 						return register ~= "" and ("󰑋 " .. register) or ""
 					end,
-				},
-				lualine_x = {
-					{ "lsp_status", ignore_lsp = { "copilot" }, cond = wide },
-					{ "copilot", show_colors = false },
+					-- spacer
 					{
-						lazy_status.updates,
-						cond = lazy_status.has_updates,
-						on_click = function()
-							vim.cmd("Lazy")
+						function()
+							return "%="
 						end,
+						padding = 0,
+					},
+					end_cap({ left = "░▒▓" }),
+					{
+						"lsp_status",
+						ignore_lsp = { "copilot", "null-ls" },
+						cond = wide,
+						icon = " ",
+						color = colourme.pair(12, "bg"),
 					},
 					{
-						mason_updates,
-						on_click = function()
-							vim.cmd("Mason")
-						end,
+						"diagnostics",
+						sources = { "nvim_diagnostic" },
+						symbols = {
+							error = " ", -- Replace with your preferred Nerd Font icon
+							warn = " ", -- Replace with your preferred Nerd Font icon
+							info = "󰌵 ", -- Replace with your preferred Nerd Font icon
+						},
+						colored = false,
+						color = colourme.pair(12, "bg"),
 					},
-
-					--{ "fileformat", fmt = string.upper, cond = wide },
-					--{},
-					"filetype",
+					end_cap({ right = "▓▒░" }),
 				},
-				lualine_y = { markdown_wordcount, "progress" },
-				lualine_z = { "location" },
+				lualine_x = {},
+				lualine_y = { { "filetype", colored = false } },
+				lualine_z = { "location", "progress" },
 			},
 		})
 

@@ -12,6 +12,23 @@ return {
 				"FloatTitle",
 				"FloatFooter",
 				"WinSeparator",
+				-- gutter / folds
+				"Folded",
+				"LineNrAbove",
+				"LineNrBelow",
+				"CursorLineFold",
+				"CursorLineSign",
+				-- tabline / winbar
+				"TabLine",
+				"TabLineFill",
+				"TabLineSel",
+				"WinBar",
+				"WinBarNC",
+				-- misc
+				"QuickFixLine",
+				"MsgSeparator",
+				"WhichKeyFloat",
+				"WhichKeySeparator",
 			},
 			exclude_groups = {
 				--"CursorLine",

@@ -63,3 +63,5 @@ done
 
 # Mole shell completion
 if output="$(mole completion zsh 2>/dev/null)"; then eval "$output"; fi
+export PATH=/opt/homebrew/opt/rustup/bin:$PATH
+export PATH=~/.cargo/bin:$PATH
