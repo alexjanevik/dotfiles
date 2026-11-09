@@ -1,5 +1,3 @@
--- # options.lua
-
 -- ## LEADER KEY
 vim.g.mapleader = " "
 
@@ -18,13 +16,6 @@ opt.breakindent = true
 opt.relativenumber = true
 opt.number = true
 opt.cursorline = true
--- highlight cursor line number
-vim.api.nvim_create_autocmd("ColorScheme", {
-	pattern = "*",
-	callback = function()
-		vim.api.nvim_set_hl(0, "CursorLineNr", { link = "DiagnosticWarn" })
-	end,
-})
 
 -- ### mouse
 vim.opt.mouse = "a"

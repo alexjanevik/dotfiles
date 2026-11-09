@@ -5,7 +5,7 @@ return {
 	config = function()
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-		local servers = require("alexj.lsp.servers")
+		local servers = require("config.servers")
 
 		for server, config in pairs(servers) do
 			vim.lsp.config(

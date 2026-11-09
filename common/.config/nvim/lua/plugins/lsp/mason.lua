@@ -8,7 +8,7 @@ return {
 		dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
 		opts = function()
 			return {
-				ensure_installed = vim.tbl_keys(require("alexj.lsp.servers")),
+				ensure_installed = vim.tbl_keys(require("config.servers")),
 				-- lspconfig.lua enables our configured servers explicitly.
 				automatic_enable = false,
 			}

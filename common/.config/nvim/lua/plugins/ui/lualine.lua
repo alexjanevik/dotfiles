@@ -13,7 +13,7 @@ return {
 			return vim.fn.winwidth(0) > 70
 		end
 
-		local colourme = require("alexj.colourme")
+		local colourme = require("colourme")
 
 		-- Lualine's "auto" theme paints sections black when StatusLine/Normal have no background
 		-- (they're cleared for transparency), so build the theme from the colourme palette instead.

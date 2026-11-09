@@ -5,7 +5,12 @@ return {
 
 	config = function()
 		require("themify").setup({
-			"colourme",
+			{
+				"colourme",
+				after = function()
+					vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { bg = "#1D2021" })
+				end,
+			},
 			"catppuccin/nvim",
 			"olimorris/onedarkpro.nvim",
 			"folke/tokyonight.nvim",

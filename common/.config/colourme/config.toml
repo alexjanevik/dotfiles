@@ -9,5 +9,5 @@ destination = "~/.config/ghostty/themes/colourme" # then set `theme = colourme` 
 
 [nvim]
 template = "templates/nvim-palette.lua"
-destination = "~/.config/nvim/lua/alexj/palette.lua" # read by lualine.lua
+destination = "~/.config/nvim/lua/colourme/palette.lua" # read by lualine.lua
 # post_hook: not set yet. Neovim needs a file watcher and Ghostty needs a reload trigger.

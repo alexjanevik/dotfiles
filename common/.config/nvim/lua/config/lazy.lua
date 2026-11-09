@@ -12,10 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ import = "alexj.plugins" },
-	{ import = "alexj.plugins.lsp" },
-	{ import = "alexj.plugins.ui" },
-	{ import = "alexj.plugins.coding" },
+	{ import = "plugins.colour" },
+	{ import = "plugins.ui" },
+	{ import = "plugins.editor" },
+	{ import = "plugins.lsp" },
 }, {
 	checker = {
 		enabled = true,

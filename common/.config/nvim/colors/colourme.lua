@@ -1,1 +1,1 @@
-require("alexj.colourme").load()
+require("colourme").load()

@@ -1,2 +1,1 @@
-require("alexj.core")
-require("alexj.lazy")
+require("config")
