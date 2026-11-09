@@ -1,11 +1,11 @@
 return {
 	"lmantw/themify.nvim",
-
 	lazy = false,
 	priority = 1000,
 
 	config = function()
 		require("themify").setup({
+			"colourme",
 			"catppuccin/nvim",
 			"olimorris/onedarkpro.nvim",
 			"folke/tokyonight.nvim",
