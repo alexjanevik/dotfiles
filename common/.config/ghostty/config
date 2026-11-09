@@ -1,8 +1,9 @@
 # window options
 
 theme = Gruvbox Material Hard 
-font-family = "JetBrainsMono Nerd Font"
-font-size = 12 
+font-family = "Hack Nerd Font Mono"
+font-codepoint-map = U+2591-U+2593=Hack Nerd Font Mono
+font-size = 13
 
  background-opacity = 0.9
  background-blur = macos-glass-regular

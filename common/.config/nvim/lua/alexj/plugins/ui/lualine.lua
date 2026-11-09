@@ -67,7 +67,7 @@ return {
 			options = {
 				theme = "auto",
 				component_separators = "",
-				section_separators = "",
+				section_separators = { left = "▓▒░", right = "░▒▓" },
 			},
 			sections = {
 				lualine_a = { "mode" },
