@@ -5,7 +5,7 @@ format = """
 $username\
 $hostname\
 $shlvl\
-$directory\
+${custom.dir}\
 $jobs\
 $git_branch\
 $git_state\
@@ -64,9 +64,6 @@ scan_timeout = 200
 continuation_prompt = " "
 
 [character]
-# success_symbol = " [ ](bold green)"
-# error_symbol = " [ ](bold red)"
-# vicmd_symbol = " [ ](bold green)"
 success_symbol = " [λ](bold bright-black)"
 error_symbol = " [λ](bold red)"
 vicmd_symbol = " [Π](bold blue)"
@@ -79,12 +76,20 @@ style = "bright-black"
 disabled = false
 use_12hr = true
 
+[custom.dir]
+command = "~/.config/starship/repo-path.sh"
+when = true
+style = "bold bright-blue"
+format = "[$output]($style) "
+shell = ["sh"]
+
 [directory]
-read_only = ""
-truncation_length = 3
-truncate_to_repo = true
-style = "bright-blue"
-# fish_style_pwd_dir_length = 1
+disabled = true
+read_only = " "
+# truncation_length = 0
+# truncate_to_repo = true
+style = "bold bright-blue"
+fish_style_pwd_dir_length = 1
 
 [jobs]
 symbol = "󰽘 "
