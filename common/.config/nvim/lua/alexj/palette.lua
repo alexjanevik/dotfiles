@@ -7,6 +7,13 @@ return {
 	comment = "#928374",
 	fg_dim = "#a89984",
 	brown = "#bd6f3e",
+	fg1 = "#ddc7a1",
+	grey0 = "#7c6f64",
+	bg5 = "#504945",
+	bg_dim = "#141617",
+	bg_diff_red = "#3c1f1e",
+	bg_diff_green = "#32361a",
+	bg_diff_blue = "#0d3138",
 	ansi = {
 		[0] = "#504945",
 		"#ea6962",

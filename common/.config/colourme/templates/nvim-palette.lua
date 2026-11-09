@@ -7,6 +7,13 @@ return {
 	comment = "#{{hex:colors.comment}}",
 	fg_dim = "#{{hex:colors.fg_dim}}",
 	brown = "#{{hex:colors.brown}}",
+	fg1 = "#{{hex:colors.fg1}}",
+	grey0 = "#{{hex:colors.grey0}}",
+	bg5 = "#{{hex:colors.bg5}}",
+	bg_dim = "#{{hex:colors.bg_dim}}",
+	bg_diff_red = "#{{hex:colors.bg_diff_red}}",
+	bg_diff_green = "#{{hex:colors.bg_diff_green}}",
+	bg_diff_blue = "#{{hex:colors.bg_diff_blue}}",
 	ansi = {
 		[0] = "#{{hex:colors.ansi0}}",
 		"#{{hex:colors.ansi1}}",

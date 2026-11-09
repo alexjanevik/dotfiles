@@ -87,7 +87,10 @@ function M.load()
 
 	local missing = vim.tbl_filter(function(key)
 		return p[key] == nil
-	end, { "bg", "fg", "bg1", "bg3", "comment", "fg_dim", "brown", "ansi" })
+	end, {
+		"bg", "fg", "bg1", "bg3", "comment", "fg_dim", "brown", "ansi",
+		"fg1", "grey0", "bg5", "bg_dim", "bg_diff_red", "bg_diff_green", "bg_diff_blue",
+	})
 	if #missing > 0 then
 		vim.notify(
 			"colourme: alexj.palette is out of date (missing " .. table.concat(missing, ", ") .. "), re-run `colourme <scheme>`",
@@ -118,6 +121,15 @@ function M.load()
 		},
 		use_cterm = true,
 	})
+
+	-- Group-by-group tweaks so the result matches gruvbox-material, not just its palette.
+	for group, spec in pairs(require("alexj.colourme_overrides")) do
+		local hl = {}
+		for key, value in pairs(spec) do
+			hl[key] = (key == "fg" or key == "bg" or key == "sp") and M.color(value) or value
+		end
+		vim.api.nvim_set_hl(0, group, hl)
+	end
 	vim.g.colors_name = "colourme"
 	M.watch()
 end
