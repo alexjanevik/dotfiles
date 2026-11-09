@@ -1,12 +1,17 @@
-# alexjanevik/dotfiles
+```text
+ ▄▄█  ▄▄  ▄█▄   ▄▀▀ ▀ █  ▄▄   ▄▄▄ 
+█  █ █  █  █   ▀█▀  █ █ █▀▀▀ ▀▀▄▄ 
+ ▀▀▀  ▀▀    ▀▀  ▀   ▀ ▀  ▀▀▀ ▀▀▀
+                                          
+ about ░ my custom unix config
+author ▒ alex janevik
+```
 
-## my dotfiles n configs n things
+<div align="center">
 
-- ghostty
-- zsh
-  - fastfetch
-  - starship
-- neovim
-- yabai
-- skhd
-- leaf
+  [overview](aaa) • [install](aaa)
+</div>
+
+## overview
+
+## install

@@ -2,9 +2,27 @@ local M = {}
 
 local watcher
 
+-- Where each named colour comes from when no palette has been generated:
+-- the active colourscheme's highlight groups (or its terminal colours).
+local fallback = {
+	bg = { "Normal", "bg" },
+	fg = { "Normal", "fg" },
+	bg1 = { "CursorLine", "bg" },
+	bg3 = { "Visual", "bg" },
+	comment = { "Comment", "fg" },
+	fg_dim = { "Normal", "fg" },
+	brown = { "Number", "fg" },
+}
+
+local function highlight_color(group, attr)
+	local value = vim.api.nvim_get_hl(0, { name = group, link = false })[attr]
+	return value and string.format("#%06x", value) or nil
+end
+
 -- A value from the generated palette, for use anywhere (lualine, highlights, ...).
 -- `name` is "bg" | "fg" | "bg1" | "bg3" | "comment" | "fg_dim" | "brown", or an ANSI index 0-15.
--- Without a palette, ANSI indices fall back to the colourscheme's g:terminal_color_N.
+-- Without a palette it falls back to the colourscheme: g:terminal_color_N for indices,
+-- highlight groups for names (nil if the colourscheme has cleared them for transparency).
 function M.color(name)
 	local ok, palette = pcall(require, "alexj.palette")
 	if ok then
@@ -16,6 +34,8 @@ function M.color(name)
 	if type(name) == "number" then
 		return vim.g["terminal_color_" .. name]
 	end
+	local source = fallback[name]
+	return source and highlight_color(source[1], source[2]) or nil
 end
 
 -- A lualine `color` function resolving { bg, fg } on every redraw, so it follows re-renders.
