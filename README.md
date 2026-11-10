@@ -31,7 +31,7 @@ cd ~/dotfiles
 # link common configs
 stow -t ~ common
 
-# macos specific (yabai, skhd & borders for window management)
+# macos specific (yabai, skhd & jankyborders for window management)
 stow -t ~ macos
 ```
 
