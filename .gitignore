@@ -1,4 +1,5 @@
 .DS_Store
+common/.config/gh/hosts.yml
 *.log
 # yazi: rebuilt with `ya pkg install`
 common/.config/yazi/plugins/
