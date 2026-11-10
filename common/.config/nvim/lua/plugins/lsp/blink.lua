@@ -12,7 +12,17 @@ return {
 		},
 		completion = {
 			list = { selection = { preselect = false, auto_insert = false } },
-			documentation = { auto_show = true },
+			menu = {
+				border = "rounded",
+				winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:BlinkCmpMenuSelection,Search:None",
+			},
+			documentation = {
+				auto_show = true,
+				window = {
+					border = "rounded",
+					winhighlight = "Normal:Normal,FloatBorder:Normal,EndOfBuffer:Normal",
+				},
+			},
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer", "lazydev" },
