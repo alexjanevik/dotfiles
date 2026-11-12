@@ -6,7 +6,7 @@
 █  █ █  █  █   ▀█▀  █ █ █▀▀▀ ▀▀▄▄ 
  ▀▀▀  ▀▀    ▀▀  ▀   ▀ ▀  ▀▀▀ ▀▀▀
                                           
- about ░ my custom unix config
+ about ░ my custom macos/unix config
 author ▒ alex janevik
 ```
 
