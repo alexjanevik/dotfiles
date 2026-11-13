@@ -55,18 +55,18 @@ alt + shift - t: yabai -m space --rotate 90
 ## layouts
 
   ### 70/30
-  alt + cmd - c: yabai -m window --ratio abs:0.70
+  alt + shift - c: yabai -m window --ratio abs:0.70
 
   ### 30/70
-  alt + cmd - b: yabai -m window --ratio abs:0.30
+  alt + shift - b: yabai -m window --ratio abs:0.30
 
   ### reset 
-  alt + cmd - v: yabai -m space --balance
+  alt + shift - v: yabai -m space --balance
 
 ## application shortcuts
 
   ### terminal
-  alt - t: osascript -e 'tell application "Ghostty"' -e 'if it is running then' -e 'tell application "Ghostty" to new window' -e 'else' -e 'activate' -e 'end if' -e 'end tell'
+  alt - return: osascript -e 'tell application "Ghostty"' -e 'if it is running then' -e 'tell application "Ghostty" to new window' -e 'else' -e 'activate' -e 'end if' -e 'end tell'
 
   ### run 'btop' in terminal
   alt - a: osascript -e 'tell application "Ghostty"' -e 'if it is running then' -e 'tell application "System Events" to tell process "Ghostty" to click menu item "New Window" of menu "File" of menu bar 1' -e 'delay 0.1' -e 'tell application "System Events" to keystroke "/opt/homebrew/bin/btop" & return' -e 'else' -e 'activate' -e 'delay 0.1' -e 'tell application "System Events" to keystroke "/opt/homebrew/bin/btop" & return' -e 'end if' -e 'end tell'

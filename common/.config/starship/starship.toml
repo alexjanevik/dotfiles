@@ -5,7 +5,7 @@ format = """
 $username\
 $hostname\
 $shlvl\
-${custom.dir}\
+$directory\
 $jobs\
 $git_branch\
 $git_state\
@@ -76,20 +76,21 @@ style = "bright-black"
 disabled = false
 use_12hr = true
 
-[custom.dir]
-command = "~/.config/starship/repo-path.sh"
-when = true
-style = "bold bright-blue"
-format = "[$output]($style) "
-shell = ["sh"]
+# [custom.dir]
+# command = "~/.config/starship/repo-path.sh"
+# when = true
+## style = "bold bright-blue"
+# format = "[$output]($style) "
+# shell = ["sh"]
 
 [directory]
-disabled = true
+# disabled = true
 read_only = " "
-# truncation_length = 0
-# truncate_to_repo = true
+truncation_length = 3
+truncate_to_repo = true
 style = "bold bright-blue"
-fish_style_pwd_dir_length = 1
+# fish_style_pwd_dir_length = 1
+truncation_symbol = "…/"
 
 [jobs]
 symbol = "󰽘 "

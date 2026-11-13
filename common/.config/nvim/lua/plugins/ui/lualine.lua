@@ -71,12 +71,18 @@ return {
 						separator = { left = "░▒▓" },
 					},
 					{
+						"copilot",
+						color = colourme.pair(2, "bg"),
+						separator = { left = "░▒▓" },
+					},
+					{
 						"diagnostics",
 						sources = { "nvim_diagnostic" },
 						symbols = {
-							error = " ", -- Replace with your preferred Nerd Font icon
-							warn = " ", -- Replace with your preferred Nerd Font icon
-							info = "󰌵 ", -- Replace with your preferred Nerd Font icon
+							error = " ",
+							warn = " ",
+							info = "󰌵 ",
+							hint = " ",
 						},
 						colored = false,
 						color = colourme.pair(1, "bg"),

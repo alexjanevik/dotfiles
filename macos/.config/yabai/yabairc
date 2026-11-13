@@ -2,7 +2,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
 # bsp or float (default: float)
-yabai -m config layout bsp
+yabai -m config layout bsp 
 
 # Set all padding and gaps to 10pt (default: 0)
 yabai -m config top_padding    10
@@ -32,7 +32,7 @@ yabai -m rule --add app="python3" manage=off
 yabai -m rule --add app="python" manage=off
 
 # Window animations
-yabai -m config window_animation_duration 0.1
+# yabai -m config window_animation_duration 0.1
 
 # Start jankyborders
 borders &
